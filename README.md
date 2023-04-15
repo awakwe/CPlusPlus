@@ -175,7 +175,7 @@ By following these principles and using the right tools, you can become a skille
 # Study Guide: Comparing Linear Search and Binary Search
 
 
-```
+```cpp
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
@@ -258,7 +258,7 @@ Let's go through each component line by line.
 
 Import Libraries
 
-```
+```cpp
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
@@ -334,21 +334,21 @@ int main() {
 
 We start by defining the size of the array (1,000,019) and initialize the array. We then fill the array in reverse order.
 
-```
+```cpp
     srand(time(0));
     int target = rand() % array_size;
 ```
 
 We seed the random number generator with the current time and generate a random target value within the bounds of the array.
 
-```
+```cpp
     int linear_loops = linear_search(arr, array_size, target);
     int binary_guesses = binary_search(arr, array_size, target);
 ```
 
 We call the linear_search and binary_search functions and store the results.
 
-```
+```cpp
     cout << "[Linear Vs. Binary Search]\n";
     cout << "The target value is " << target << endl;
     cout << "Linear Search: " << linear_loops << " loop(s)\n";
@@ -357,7 +357,7 @@ We call the linear_search and binary_search functions and store the results.
 
 We display the target value, the number of loops for linear search, and the number of guesses for binary search.
 
-```
+```cpp
     if (linear_loops < binary_guesses) {
         cout << "Linear Search is faster this time!\n";
     } else if (binary_guesses < linear_loops) {
@@ -369,7 +369,7 @@ We display the target value, the number of loops for linear search, and the numb
 
 We compare the number of loops and guesses to determine which algorithm was faster and print the result. If the number of loops and guesses are equal, we print that it's a tie.
 
-```
+```cpp
     return 0;
 }
 ```
@@ -382,6 +382,73 @@ This code demonstrates the performance difference between linear search and bina
       
 
 # Study Guide: Implementing Random Sort Algorithm
+
+```cpp
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+using namespace std;
+
+bool check_if_sorted(int arr[], int size) {
+    for (int i = 1; i < size; i++) {
+        if (arr[i - 1] > arr[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void shuffleArray(int arr[], int size) {
+    for (int i = size - 1; i > 0; i--) {
+        int j = rand() % (i + 1);
+        swap(arr[i], arr[j]);
+    }
+}
+
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout << arr[i];
+        if (i < size - 1) {
+            cout << ", ";
+        }
+    }
+    cout << endl;
+}
+
+int main() {
+    srand(time(0));
+
+    const int array_size = 17;
+    int arr[array_size];
+
+    for (int i = 0; i < array_size; i++) {
+        arr[i] = rand() % 359 + 1;
+    }
+
+    int attempts = 0;
+
+    cout << "[Random Sort]" << endl;
+
+    while (!check_if_sorted(arr, array_size)) {
+        cout << "Printing array..." << endl;
+        printArray(arr, array_size);
+
+        cout << "Not sorted yet!" << endl;
+        cout << "Shuffling array..." << endl;
+        shuffleArray(arr, array_size);
+
+        attempts++;
+    }
+
+    cout << "Printing array..." << endl;
+    printArray(arr, array_size);
+
+    cout << "Hooray, it's sorted! And it only took " << attempts << " attempts!" << endl;
+
+    return 0;
+}
+```
 
 In this guide, we will go through the process of creating a simple program to implement the Random Sort algorithm on a randomly generated array. The program will consist of the following components:
 
@@ -485,7 +552,11 @@ Finally, we print the sorted array and display the number of attempts it took to
 
 Summary
 
-This code demonstrates the implementation of the Random Sort algorithm on a randomly generated array. The algorithm repeatedly shuffles the array and checks if it's sorted. The worst-case time complexity of this algorithm is O
+This code demonstrates the implementation of the Random Sort algorithm on a randomly generated array. The algorithm repeatedly shuffles the array and checks if it's sorted. The worst-case time complexity of this algorithm is O(∞), as it could potentially take an infinite number of attempts to sort the array. This simple program helps illustrate the inefficiency of the Random Sort algorithm compared to other sorting algorithms like Bubble Sort, Selection Sort, and Insertion Sort. The program uses three helper functions: check_if_sorted, shuffleArray, and printArray, to carry out the sorting process and display the intermediate results.
+
+
+
+
                                                     
 ## Quizzes
 
