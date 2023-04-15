@@ -174,6 +174,76 @@ By following these principles and using the right tools, you can become a skille
 
 # Study Guide: Comparing Linear Search and Binary Search
 
+
+```
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+using namespace std;
+
+int linear_search(int arr[], int size, int target) {
+    for (int i = size - 1; i >= 0; i--) {
+        if (arr[i] == target) {
+            return size - i;
+        }
+    }
+    return -1;
+}
+
+int binary_search(int arr[], int size, int target) {
+    int left = 0;
+    int right = size - 1;
+    int guesses = 0;
+
+    while (left <= right) {
+        guesses++;
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == target) {
+            return guesses;
+        }
+
+        if (arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return guesses;
+}
+
+int main() {
+    const int array_size = 1000019;
+    int arr[array_size];
+
+    for (int i = 0; i < array_size; i++) {
+        arr[i] = array_size - i - 1;
+    }
+
+    srand(time(0));
+    int target = rand() % array_size;
+
+    int linear_loops = linear_search(arr, array_size, target);
+    int binary_guesses = binary_search(arr, array_size, target);
+
+    cout << "[Linear Vs. Binary Search]\n";
+    cout << "The target value is " << target << endl;
+    cout << "Linear Search: " << linear_loops << " loop(s)\n";
+    cout << "Binary Search: " << binary_guesses << " guess(es)\n";
+
+    if (linear_loops < binary_guesses) {
+        cout << "Linear Search is faster this time!\n";
+    } else if (binary_guesses < linear_loops) {
+        cout << "Binary Search is faster this time!\n";
+    } else {
+        cout << "It's a tie!\n";
+    }
+
+    return 0;
+}
+```
+
 In this guide, we will dissect a C++ code that compares the performance of linear search and binary search algorithms on a sorted array. Think of this as a race between two people, one who checks every participant in a race one by one (linear search) and another who eliminates half the participants in every step (binary search).
 
 Code Overview
@@ -197,6 +267,7 @@ Import Libraries
 We include the necessary libraries. iostream for input/output, ctime for time-related functions, and cstdlib for random number generation.
 
 Using Namespace
+
 
   
 ```
