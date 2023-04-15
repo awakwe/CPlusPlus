@@ -555,7 +555,177 @@ Summary
 This code demonstrates the implementation of the Random Sort algorithm on a randomly generated array. The algorithm repeatedly shuffles the array and checks if it's sorted. The worst-case time complexity of this algorithm is O(∞), as it could potentially take an infinite number of attempts to sort the array. This simple program helps illustrate the inefficiency of the Random Sort algorithm compared to other sorting algorithms like Bubble Sort, Selection Sort, and Insertion Sort. The program uses three helper functions: check_if_sorted, shuffleArray, and printArray, to carry out the sorting process and display the intermediate results.
 
 
+# Study Guide for Overloaded Surprise Function Code
 
+```cpp
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+int surprise_function(int a, int b) {
+    return a + b;
+}
+
+float surprise_function(float a, float b) {
+    return a / b;
+}
+
+double surprise_function(double a, double b) {
+    return fmod(a, b);
+}
+
+string surprise_function(char a, char b) {
+    return string(1, a) + b;
+}
+
+bool surprise_function(bool a, bool b) {
+    return a && b;
+}
+
+int main() {
+    cout << "[Overloaded Surprise Function]" << endl;
+    cout << "What data type do you want to enter? ";
+    string data_type;
+    cin >> data_type;
+
+    cout << "Value #1: ";
+    if (data_type == "int") {
+        int a, b;
+        cin >> a;
+        cout << "Value #2: ";
+        cin >> b;
+        cout << "Calling surprise_function()..." << endl;
+        cout << "The result is " << surprise_function(a, b) << endl;
+    } else if (data_type == "float") {
+        float a, b;
+        cin >> a;
+        cout << "Value #2: ";
+        cin >> b;
+        cout << "Calling surprise_function()..." << endl;
+        cout << "The result is " << surprise_function(a, b) << endl;
+    } else if (data_type == "double") {
+        double a, b;
+        cin >> a;
+        cout << "Value #2: ";
+        cin >> b;
+        cout << "Calling surprise_function()..." << endl;
+        cout << "The result is " << surprise_function(a, b) << endl;
+    } else if (data_type == "char") {
+        char a, b;
+        cin >> a;
+        cout << "Value #2: ";
+        cin >> b;
+        cout << "Calling surprise_function()..." << endl;
+        cout << "The result is " << surprise_function(a, b) << endl;
+    } else if (data_type == "boolean") {
+        bool a, b;
+        cin >> boolalpha >> a;
+        cout << "Value #2: ";
+        cin >> boolalpha >> b;
+        cout << "Calling surprise_function()..." << endl;
+        cout << boolalpha << "The result is " << surprise_function(a, b) << endl;
+    } else {
+        cout << "Invalid data type entered." << endl;
+    }
+
+    return 0;
+}
+```
+
+This code demonstrates the use of overloaded functions in C++. The program takes in two values of a specified data type, performs different operations depending on the data type, and prints the result.
+
+Components and Line-by-Line Explanation
+
+Include necessary headers:
+
+```cpp
+#include <iostream>
+#include <string>
+```
+
+These headers provide the input/output stream (iostream) and string manipulation functionality (string) required for this code.
+
+Define surprise_function for different data types:
+
+```cpp
+int surprise_function(int a, int b) {
+    return a + b;
+}
+
+float surprise_function(float a, float b) {
+    return a / b;
+}
+
+double surprise_function(double a, double b) {
+    return fmod(a, b);
+}
+
+string surprise_function(char a, char b) {
+    return string(1, a) + b;
+}
+
+bool surprise_function(bool a, bool b) {
+    return a && b;
+}
+```
+
+These functions perform different operations based on the data type of the input values:
+
+int: addition
+float: division
+double: modulus (remainder)
+char: concatenation (return as string)
+bool: result of AND
+main() function:
+
+```cpp
+int main() {
+    cout << "[Overloaded Surprise Function]" << endl;
+    cout << "What data type do you want to enter? ";
+    string data_type;
+    cin >> data_type;
+```
+
+The program first prompts the user to enter the data type they want to use.
+
+Based on the data type, the program prompts the user for two values and calls the corresponding surprise_function:
+
+```cpp
+    cout << "Value #1: ";
+    if (data_type == "int") {
+        int a, b;
+        cin >> a;
+        cout << "Value #2: ";
+        cin >> b;
+        cout << "Calling surprise_function()..." << endl;
+        cout << "The result is " << surprise_function(a, b) << endl;
+    } //... Other data types follow a similar pattern
+```
+
+The program checks the user's input for the data type and prompts the user to enter two values of that type. Then, it calls the appropriate surprise_function for the given data type and prints the result.
+
+If the user enters an invalid data type:
+
+```cpp
+    } else {
+        cout << "Invalid data type entered." << endl;
+    }
+```
+
+If the user enters an invalid data type, the program will print an error message.
+
+End of main() function:
+
+```cpp
+    return 0;
+}
+```
+
+The main() function returns 0 to signal a successful program execution.
+
+By following this study guide, you should gain a better understanding of how overloaded functions work in C++ and how to create a program that handles different data types and operations using the same function name.
 
                                                     
 ## Quizzes
