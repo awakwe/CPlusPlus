@@ -324,11 +324,14 @@ int binary_search(int arr[], int size, int target) {
 
 ```
 
+
 This function also takes an array, its size, and the target value to search for. It starts with two pointers, left and right, and keeps track of the number of guesses made. It calculates the midpoint and compares it to the target value. If the midpoint is equal to the target, it returns the number of guesses. If the midpoint is less than the target, it updates the left pointer; otherwise, it updates the right pointer.
 
 Main Function
   
+  
 ```
+
 int main() {
     const int array_size = 1000019;
     int arr[array_size];
@@ -336,7 +339,9 @@ int main() {
     for (int i = 0; i < array_size; i++) {
         arr[i] = array_size - i - 1;
     }
+    
 ```
+
 
 We start by defining the size of the array (1,000,019) and initialize the array. We then fill the array in reverse order.
 
