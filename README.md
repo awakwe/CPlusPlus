@@ -269,20 +269,15 @@ We include the necessary libraries. iostream for input/output, ctime for time-re
 
 Using Namespace
 
-
-  
-```
+```cpp
 using namespace std;
-
 ```
-
 
 Using the std namespace for convenience.
 
-Linear Search Function
-  
-  
-```
+**Linear Search Function**
+
+```cpp
 int linear_search(int arr[], int size, int target) {
     for (int i = size - 1; i >= 0; i--) {
         if (arr[i] == target) {
@@ -291,15 +286,13 @@ int linear_search(int arr[], int size, int target) {
     }
     return -1;
 }
-
 ```
 
 This function takes an array, its size, and the target value to search for. It starts from the end of the array and iterates backwards, checking if the current element is equal to the target value. If found, it returns the number of loops required. If not found, it returns -1.
 
-Binary Search Function
+**Binary Search Function**
 
-  
-```
+```cpp
 int binary_search(int arr[], int size, int target) {
     int left = 0;
     int right = size - 1;
@@ -321,17 +314,13 @@ int binary_search(int arr[], int size, int target) {
     }
     return guesses;
 }
-
 ```
-
 
 This function also takes an array, its size, and the target value to search for. It starts with two pointers, left and right, and keeps track of the number of guesses made. It calculates the midpoint and compares it to the target value. If the midpoint is equal to the target, it returns the number of guesses. If the midpoint is less than the target, it updates the left pointer; otherwise, it updates the right pointer.
 
-Main Function
-  
-  
-```
+**Main Function**
 
+```cpp
 int main() {
     const int array_size = 1000019;
     int arr[array_size];
@@ -339,7 +328,7 @@ int main() {
     for (int i = 0; i < array_size; i++) {
         arr[i] = array_size - i - 1;
     }
-    
+}
 ```
 
 
