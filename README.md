@@ -172,7 +172,144 @@ To become proficient in C++, it is important to have a strong foundation in the 
 
 By following these principles and using the right tools, you can become a skilled C++ programmer and develop robust and efficient applications.
 
+# Study Guide: Comparing Linear Search and Binary Search
 
+In this guide, we will dissect a C++ code that compares the performance of linear search and binary search algorithms on a sorted array. Think of this as a race between two people, one who checks every participant in a race one by one (linear search) and another who eliminates half the participants in every step (binary search).
+
+Code Overview
+
+The code consists of three main components:
+
+linear_search function
+binary_search function
+main function
+
+Let's go through each component line by line.
+
+Import Libraries
+
+```
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+```
+
+We include the necessary libraries. iostream for input/output, ctime for time-related functions, and cstdlib for random number generation.
+
+Using Namespace
+  
+```
+using namespace std;
+```
+
+Using the std namespace for convenience.
+
+Linear Search Function
+  
+  
+```
+int linear_search(int arr[], int size, int target) {
+    for (int i = size - 1; i >= 0; i--) {
+        if (arr[i] == target) {
+            return size - i;
+        }
+    }
+    return -1;
+}
+```
+
+This function takes an array, its size, and the target value to search for. It starts from the end of the array and iterates backwards, checking if the current element is equal to the target value. If found, it returns the number of loops required. If not found, it returns -1.
+
+Binary Search Function
+  
+```
+int binary_search(int arr[], int size, int target) {
+    int left = 0;
+    int right = size - 1;
+    int guesses = 0;
+
+    while (left <= right) {
+        guesses++;
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == target) {
+            return guesses;
+        }
+
+        if (arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return guesses;
+}
+```
+
+This function also takes an array, its size, and the target value to search for. It starts with two pointers, left and right, and keeps track of the number of guesses made. It calculates the midpoint and compares it to the target value. If the midpoint is equal to the target, it returns the number of guesses. If the midpoint is less than the target, it updates the left pointer; otherwise, it updates the right pointer.
+
+Main Function
+  
+```
+int main() {
+    const int array_size = 1000019;
+    int arr[array_size];
+
+    for (int i = 0; i < array_size; i++) {
+        arr[i] = array_size - i - 1;
+    }
+```
+
+We start by defining the size of the array (1,000,019) and initialize the array. We then fill the array in reverse order.
+
+```
+    srand(time(0));
+    int target = rand() % array_size;
+```
+
+We seed the random number generator with the current time and generate a random target value within the bounds of the array.
+
+```
+    int linear_loops = linear_search(arr, array_size, target);
+    int binary_guesses = binary_search(arr, array_size, target);
+```
+
+We call the linear_search and binary_search functions and store the results.
+
+```
+    cout << "[Linear Vs. Binary Search]\n";
+    cout << "The target value is " << target << endl;
+    cout << "Linear Search: " << linear_loops << " loop(s)\n";
+    cout << "Binary Search: " << binary_guesses << " guess(es)\n";
+```
+
+We display the target value, the number of loops for linear search, and the number of guesses for binary search.
+
+```
+    if (linear_loops < binary_guesses) {
+        cout << "Linear Search is faster this time!\n";
+    } else if (binary_guesses < linear_loops) {
+        cout << "Binary Search is faster this time!\n";
+    } else {
+        cout << "It's a tie!\n";
+    }
+```
+
+We compare the number of loops and guesses to determine which algorithm was faster and print the result. If the number of loops and guesses are equal, we print that it's a tie.
+
+```
+    return 0;
+}
+```
+
+Finally, we return 0 to signal the successful execution of the program.
+
+Summary
+
+This code demonstrates the performance difference between linear search and binary search on a sorted array. Linear search checks each element one by one, while binary search eliminates half of the remaining elements with each step. By comparing the number of loops and guesses, we can see which algorithm is faster for a particular target value.
+      
+      
+                                                    
 ## Quizzes
 
 Throughout the module, there will be quizzes to test your knowledge on the topics we have covered. These quizzes will help you assess your understanding and identify areas where you may need to review.
