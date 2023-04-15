@@ -453,9 +453,13 @@ int main() {
 In this guide, we will go through the process of creating a simple program to implement the Random Sort algorithm on a randomly generated array. The program will consist of the following components:
 
 check_if_sorted function
+
 shuffleArray function
+
 printArray function
+
 main function
+
 Code Overview
 
 Let's start by creating each function one by one.
@@ -674,10 +678,16 @@ bool surprise_function(bool a, bool b) {
 These functions perform different operations based on the data type of the input values:
 
 int: addition
+
 float: division
+
 double: modulus (remainder)
+
 char: concatenation (return as string)
+
 bool: result of AND
+
+
 main() function:
 
 ```cpp
