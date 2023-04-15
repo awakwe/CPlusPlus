@@ -380,7 +380,111 @@ Summary
 
 This code demonstrates the performance difference between linear search and binary search on a sorted array. Linear search checks each element one by one, while binary search eliminates half of the remaining elements with each step. By comparing the number of loops and guesses, we can see which algorithm is faster for a particular target value.
       
-      
+
+# Study Guide: Implementing Random Sort Algorithm
+
+In this guide, we will go through the process of creating a simple program to implement the Random Sort algorithm on a randomly generated array. The program will consist of the following components:
+
+check_if_sorted function
+shuffleArray function
+printArray function
+main function
+Code Overview
+
+Let's start by creating each function one by one.
+
+Check If Sorted Function
+```cpp
+bool check_if_sorted(int arr[], int size) {
+    for (int i = 1; i < size; i++) {
+        if (arr[i - 1] > arr[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+This function checks if the given array is sorted in non-descending order. It takes an array and its size as input and returns a boolean value. If the array is sorted, it returns true, otherwise false.
+
+Shuffle Array Function
+
+```cpp
+
+void shuffleArray(int arr[], int size) {
+    for (int i = size - 1; i > 0; i--) {
+        int j = rand() % (i + 1);
+        swap(arr[i], arr[j]);
+    }
+}
+```
+
+This function shuffles the given array using the Fisher-Yates algorithm. It takes an array and its size as input and modifies the original array in place.
+
+Print Array Function
+
+
+```cpp
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout << arr[i];
+        if (i < size - 1) {
+            cout << ", ";
+        }
+    }
+    cout << endl;
+}
+```
+
+This function prints the contents of the given array. It takes an array and its size as input and prints the array elements separated by commas.
+
+Main Function
+
+
+```cpp
+int main() {
+    srand(time(0));
+
+    const int array_size = 17;
+    int arr[array_size];
+
+    for (int i = 0; i < array_size; i++) {
+        arr[i] = rand() % 359 + 1;
+    }
+
+    int attempts = 0;
+
+    cout << "[Random Sort]" << endl;
+
+    while (!check_if_sorted(arr, array_size)) {
+        cout << "Printing array..." << endl;
+        printArray(arr, array_size);
+
+        cout << "Not sorted yet!" << endl;
+        cout << "Shuffling array..." << endl;
+        shuffleArray(arr, array_size);
+
+        attempts++;
+    }
+
+    cout << "Printing array..." << endl;
+    printArray(arr, array_size);
+
+    cout << "Hooray, it's sorted! And it only took " << attempts << " attempts!" << endl;
+
+    return 0;
+}
+```
+
+In the main function, we first seed the random number generator with the current time. We then create an array of size 17 and fill it with random numbers between 1 and 359. We initialize a variable to count the number of shuffle attempts.
+
+We use a while loop to check if the array is sorted using the check_if_sorted function. If it's not sorted, we print the array, shuffle it using the shuffleArray function, and increment the attempts counter. We repeat this process until the array is sorted.
+
+Finally, we print the sorted array and display the number of attempts it took to sort the array using the Random Sort algorithm.
+
+Summary
+
+This code demonstrates the implementation of the Random Sort algorithm on a randomly generated array. The algorithm repeatedly shuffles the array and checks if it's sorted. The worst-case time complexity of this algorithm is O
                                                     
 ## Quizzes
 
