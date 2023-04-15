@@ -394,6 +394,7 @@ Code Overview
 Let's start by creating each function one by one.
 
 Check If Sorted Function
+
 ```cpp
 bool check_if_sorted(int arr[], int size) {
     for (int i = 1; i < size; i++) {
