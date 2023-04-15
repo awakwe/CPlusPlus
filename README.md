@@ -197,10 +197,12 @@ Import Libraries
 We include the necessary libraries. iostream for input/output, ctime for time-related functions, and cstdlib for random number generation.
 
 Using Namespace
+
   
 ```
 using namespace std;
 ```
+
 
 Using the std namespace for convenience.
 
@@ -216,11 +218,13 @@ int linear_search(int arr[], int size, int target) {
     }
     return -1;
 }
+
 ```
 
 This function takes an array, its size, and the target value to search for. It starts from the end of the array and iterates backwards, checking if the current element is equal to the target value. If found, it returns the number of loops required. If not found, it returns -1.
 
 Binary Search Function
+
   
 ```
 int binary_search(int arr[], int size, int target) {
@@ -244,6 +248,7 @@ int binary_search(int arr[], int size, int target) {
     }
     return guesses;
 }
+
 ```
 
 This function also takes an array, its size, and the target value to search for. It starts with two pointers, left and right, and keeps track of the number of guesses made. It calculates the midpoint and compares it to the target value. If the midpoint is equal to the target, it returns the number of guesses. If the midpoint is less than the target, it updates the left pointer; otherwise, it updates the right pointer.
