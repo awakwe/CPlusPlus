@@ -262,6 +262,7 @@ Import Libraries
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+
 ```
 
 We include the necessary libraries. iostream for input/output, ctime for time-related functions, and cstdlib for random number generation.
@@ -272,6 +273,7 @@ Using Namespace
   
 ```
 using namespace std;
+
 ```
 
 
