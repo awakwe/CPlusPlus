@@ -589,6 +589,34 @@ Summary
 
 This code demonstrates the implementation of the Random Sort algorithm on a randomly generated array. The algorithm repeatedly shuffles the array and checks if it's sorted. The worst-case time complexity of this algorithm is O(∞), as it could potentially take an infinite number of attempts to sort the array. This simple program helps illustrate the inefficiency of the Random Sort algorithm compared to other sorting algorithms like Bubble Sort, Selection Sort, and Insertion Sort. The program uses three helper functions: check_if_sorted, shuffleArray, and printArray, to carry out the sorting process and display the intermediate results.
 
+# FAQ Study Guide: Random Sort Program
+
+## Q1: Why is `int i = 1` and not `0` in the `check_if_sorted` function?
+
+A1: In the `check_if_sorted` function, the loop iterates over the elements of the array, starting from index 1 and comparing it to the previous element at index i-1. If i is initialized to 0, then when the loop attempts to access the element at index i-1, it will access an invalid memory location, which can cause undefined behavior. Therefore, the loop starts from index 1 to ensure that there is a valid previous element to compare against. The first element of the array at index 0 will be compared to the second element at index 1.
+
+## Q2: Where does the `-1` come from, and why is the condition `i > 0` in the shuffleArray function?
+
+A2: This line of code is part of the `shuffleArray` function, which shuffles the elements of an integer array randomly. The for loop starts from the last element of the array (i = size - 1), and iterates backwards to the second element (i > 0), swapping each element with a randomly selected element from the remaining unshuffled elements.
+
+The `-1` is used to make sure that we start the loop from the last element of the array, since the index of the last element is always one less than the size of the array. For example, if the size of the array is 5, then the last element is at index 4 (since arrays are zero-indexed).
+
+The `i > 0` condition is used to make sure that we stop the loop after swapping the second element, and not the first element. This is because we don't need to swap the first element with itself, and swapping it would not change anything. If we didn't have this condition, the loop would also swap the first element with a randomly selected element, which is unnecessary.
+
+## Q3: Is `swap` a restricted keyword in C++?
+
+A3: `swap()` is a function provided by the C++ Standard Library that swaps the values of two variables. It is not a restricted keyword in C++, but it is a predefined function that is part of the C++ Standard Library.
+
+In the given program, `swap(arr[i], arr[j])` is used to swap the values of two elements in the `arr` array. The `i` and `j` variables represent the indices of the elements to be swapped.
+
+## Q4: What is the purpose of `+1` in `rand() % (i + 1)`?
+
+A4: The `rand()` function generates a random integer between 0 and a maximum value determined by the implementation. In this program, we want to use `rand()` to generate a random index between 0 and `i`, where `i` is the current index of the element being shuffled in the `shuffleArray` function.
+
+However, the `%` operator in C++ computes the remainder of a division operation. So if we use `rand() % i` to generate a random index, the possible range of indices would be from 0 to `i - 1`, which is not what we want. To include the upper bound value of `i` in the possible range of indices, we add 1 to `i` when computing the maximum value for the `%` operator.
+
+The `+1` in the `rand() % (i + 1)` expression is used to make sure that the randomly generated index includes the current element being shuffled. This ensures that each element has an equal chance of being swapped with any other un
+
 
 # Study Guide for Overloaded Surprise Function Code
 
