@@ -381,6 +381,37 @@ Summary
 This code demonstrates the performance difference between linear search and binary search on a sorted array. Linear search checks each element one by one, while binary search eliminates half of the remaining elements with each step. By comparing the number of loops and guesses, we can see which algorithm is faster for a particular target value.
       
 
+## FAQ Study Guide
+
+Why is there a -1 in this part?
+
+```cpp
+for (int i = 0; i < array_size; i++) {
+    arr[i] = array_size - i - 1;
+}
+```
+
+The -1 in the code is used to initialize the elements of the arr array with values in descending order. The expression array_size - i - 1 is used to assign values to the array elements starting from array_size - 1 and decrementing down to 0. This is because the loop variable i starts from 0 and goes up to array_size - 1, so by subtracting i and then -1 from array_size, we get the values we need to fill the array in descending order. This initialization is done to simulate an unsorted array with arbitrary integer values, which can be used to test the linear and binary search functions.
+
+Why is there a zero in this part?
+
+```cpp
+srand(time(0));
+```
+
+The time(0) function call returns the current time as the number of seconds since January 1, 1970, also known as the Unix epoch. The srand function uses this value as the seed for the random number generator. The 0 passed as an argument to time() is an optional parameter that specifies a pointer to a time_t object to receive the current time. If this parameter is set to 0 or NULL, the function simply returns the time as a time_t value instead of storing it in a variable.
+
+In this case, the value of time(0) is being used directly as the seed for the random number generator, so there is no need to store it in a variable. This is a common idiom in C++ for obtaining a "random" seed based on the current time, which can be used to initialize a random number generator for use in simulations, games, or other applications.
+
+What is a random number generator?
+
+A random number generator is a computer program that generates a sequence of numbers that appear to be random, but are actually determined by a mathematical algorithm. In programming, we can use a random number generator to simulate events that have an element of chance or unpredictability, such as rolling dice or shuffling cards. To make the random number generator produce different sequences of numbers each time we run our program, we need to give it a different starting point, called a "seed."
+
+What is a seed in a random number generator?
+
+A seed is a starting point for a random number generator. The seed determines the sequence of random numbers that the generator will produce. By changing the seed, we can get a different sequence of random numbers. One common way to set the seed is to use the current time, since the time is always changing. In C++, we can use the srand function to set the seed for the random number generator. By calling srand with a different seed value each time we run our program, we can get a different sequence of random numbers.
+
+
 # Study Guide: Implementing Random Sort Algorithm
 
 ```cpp
