@@ -796,6 +796,47 @@ The main() function returns 0 to signal a successful program execution.
 
 By following this study guide, you should gain a better understanding of how overloaded functions work in C++ and how to create a program that handles different data types and operations using the same function name.
 
+
+## FAQ: Study Guide for double surprise_function(double a, double b)
+
+What does fmod() do in C++?
+
+fmod() is a math library function in C++ that calculates the remainder of the division of two floating-point numbers.
+
+What is the surprise_function doing?
+
+The surprise_function takes two double arguments a and b, and returns the remainder of a divided by b. The function uses the fmod() function to perform this calculation.
+
+What is the function signature of this version of surprise_function?
+
+```cpp
+double surprise_function(double a, double b) {
+    return fmod(a, b);
+}
+```
+
+The function takes two double arguments a and b, and returns a double value that is the remainder of a divided by b.
+
+Can you give an example of how this function works?
+
+Suppose we want to calculate the remainder of dividing 10.5 by 3.2. We can call the surprise_function with a = 10.5 and b = 3.2, like this:
+
+```cpp
+double result = surprise_function(10.5, 3.2);
+```
+
+The fmod() function will calculate the remainder of 10.5 / 3.2, which is approximately 1.9, and return it as a double value. The surprise_function will then return this value to the caller.
+
+How does the concatenation of two characters work in surprise_function?
+
+In the line return string(1, a) + b;, the surprise_function returns a string value that concatenates two char values a and b.
+
+The string(1, a) expression creates a new string object that contains the single character a. The first argument 1 specifies the length of the string, and the second argument a specifies the character to use.
+
+The + operator is then used to concatenate the string containing a with the char value b. Since the + operator is overloaded for string and char, this concatenation works automatically, and the resulting string contains both characters a and b.
+
+So the string(1, a) + b expression is a concise way to concatenate two characters into a string value in C++.
+
                                                     
 ## Quizzes
 
