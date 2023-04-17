@@ -837,6 +837,23 @@ The + operator is then used to concatenate the string containing a with the char
 
 So the string(1, a) + b expression is a concise way to concatenate two characters into a string value in C++.
 
+## FAQ Study Guide: What is boolalpha in C++?
+Q: What is boolalpha in C++?
+
+boolalpha is a format flag in C++ that is used to control the output formatting of bool values. By default, bool values are output as 0 or 1, which represent false and true, respectively. However, when boolalpha is set, bool values are output as the words "false" and "true", respectively.
+
+Q: How is boolalpha used in C++?
+
+To set the boolalpha format flag, you can use the std::boolalpha manipulator in the output stream. For example, cout << boolalpha << my_bool_var would output true or false depending on the value of my_bool_var.
+
+Q: Where is boolalpha used in the given code example?
+
+In the given code example, boolalpha is used in the else if block that handles the case where the user enters "boolean" as the data type. When this happens, the program prompts the user to enter two bool values, and then sets the boolalpha format flag for the subsequent output. This ensures that the bool values are output as words instead of numbers.
+
+Q: What happens if boolalpha is not set in the given code example?
+
+If boolalpha is not set in the given code example, the bool values entered by the user would be output as 0 or 1, which represent false and true, respectively. Setting boolalpha ensures that the output is more human-readable by using the words "false" and "true" instead.
+
                                                     
 ## Quizzes
 
