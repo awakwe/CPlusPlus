@@ -1509,41 +1509,41 @@ Below is a component-by-component explanation of the code:
 
 1. **Header files**: The code includes four header files:
 
-   ```cpp
+```cpp
    #include <iostream>
    #include <string>
    #include <ctime>
    #include <cstdlib>
-   ```
+```
 
    `iostream` enables input and output operations, `string` is for string manipulation, `ctime` provides time functions, and `cstdlib` contains functions for random number generation.
 
 2. **Class declaration: RoshamboPlayer**: The class `RoshamboPlayer` is declared, containing private data members and public member functions.
 
-   ```cpp
+```cpp
    class RoshamboPlayer {
    private:
        std::string playerName;
        std::string attack;
        int roLimit;
        int shamBoLimit;
-   ```
+```
 
    `playerName`, `attack`, `roLimit`, and `shamBoLimit` are private data members, which store the player's name, current attack, and limits for determining the random attack.
 
 3. **Constructor**: The constructor initializes the `RoshamboPlayer` object with a name, `roLimit`, and `shamBoLimit` values. It also seeds the random number generator with the current time.
 
-   ```cpp
+```cpp
    public:
        RoshamboPlayer(const std::string& name, int roLimit, int shamBoLimit)
            : playerName(name), roLimit(roLimit), shamBoLimit(shamBoLimit) {
            srand(time(0));
        }
-   ```
+```
 
 4. **playRound function**: This function generates a random attack for the computer player and compares it to the player's attack to determine if the player has won or lost the round.
 
-   ```cpp
+```cpp
        bool playRound(const std::string& playerAttack) {
            int randomValue = rand() % 101;
            if (randomValue < roLimit) {
@@ -1562,11 +1562,11 @@ Below is a component-by-component explanation of the code:
                return true;
            }
        }
-   ```
+```
 
 5. **getName and getAttack functions**: These functions return the player's name and current attack, respectively.
 
-   ```cpp
+```cpp
        std::string getName() const {
            return playerName;
        }
@@ -1576,22 +1576,22 @@ Below is a component-by-component explanation of the code:
        }
    };
 
-   ```
+```
 
 6. **main function**: The main function creates two `RoshamboPlayer` objects, `p1` and `p2`, with different attributes. It also declares variables for user input and game choices.
 
-   ```cpp
+```cpp
    int main() {
        RoshamboPlayer p1("R. Dorothy", 30, 60);
        RoshamboPlayer p2("Johnny 5", 40, 85);
        RoshamboPlayer* chosenPlayer;
        std::string input;
        int choice;
-   ```
+```
 
 7. **User opponent selection**: The program prompts the user to choose an opponent and stores the selected opponent in the `chosenPlayer` pointer.
 
-   ```cpp
+```cpp
        std::cout << "[Ro-Sham-Bo Player]\n";
        std::cout << "Who do you want to face?\n";
        std::cout << "1) " << p1.getName() << std::endl;
@@ -1606,11 +1606,11 @@ Below is a component-by-component explanation of the code:
    }
 
    std::cout << "Your opponent is " << chosenPlayer->getName() << "!" << std::endl;
-   ```
+```
 
 8. **Game loop**: The program enters a loop where it prompts the user to either play a round or quit the game. If the user chooses to play, they are prompted to enter a valid attack.
 
-   ```cpp
+```cpp
    while (true) {
        std::cout << "1) Play a round?\n";
        std::cout << "2) Quit?\n";
@@ -1630,11 +1630,11 @@ Below is a component-by-component explanation of the code:
            }
            std::cout << "Invalid attack!" << std::endl;
        }
-   ```
+```
 
 9. **Round result**: The program calls the `playRound` function with the user's input and displays the result of the round based on the function's return value.
 
-   ```cpp
+```cpp
        if (chosenPlayer->playRound(input)) {
            std::cout << chosenPlayer->getName() << " chose " << chosenPlayer->getAttack() << "! You win!" << std::endl;
        } else {
