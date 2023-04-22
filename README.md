@@ -1429,6 +1429,255 @@ return 0;
 ```
 The switch statement and the main function are closed. The program returns 0 to indicate successful execution.    
     
+    
+# Ro-Sham-Bo Game: A C++ Study Guide   
+
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cstdlib>
+
+class RoshamboPlayer {
+private:
+    std::string playerName;
+    std::string attack;
+    int roLimit;
+    int shamBoLimit;
+
+public:
+    RoshamboPlayer(const std::string& name, int roLimit, int shamBoLimit)
+        : playerName(name), roLimit(roLimit), shamBoLimit(shamBoLimit) {
+        srand(time(0));
+    }
+
+    bool playRound(const std::string& playerAttack) {
+        int randomValue = rand() % 101;
+        if (randomValue < roLimit) {
+            attack = "Ro";
+        } else if (randomValue < shamBoLimit) {
+            attack = "Sham";
+        } else {
+            attack = "Bo";
+        }
+
+        if (playerAttack == attack) {
+            return false;
+        } else if ((playerAttack == "Ro" && attack == "Sham") || (playerAttack == "Sham" && attack == "Bo") || (playerAttack == "Bo" && attack == "Ro")) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    std::string getName() const {
+        return playerName;
+    }
+
+    std::string getAttack() const {
+        return attack;
+    }
+};
+
+int main() {
+    RoshamboPlayer p1("R. Dorothy", 30, 60);
+    RoshamboPlayer p2("Johnny 5", 40, 85);
+    RoshamboPlayer* chosenPlayer;
+    std::string input;
+    int choice;
+
+    std::cout << "[Ro-Sham-Bo Player]\n";
+    std::cout << "Who do you want to face?\n";
+    std::cout << "1) " << p1.getName() << std::endl;
+    std::cout << "2) " << p2.getName() << std::endl;
+    std::cout << "Opponent: ";
+    std::cin >> choice;
+
+    if (choice == 1) {
+        chosenPlayer = &p1;
+    } else {
+        chosenPlayer = &p2;
+    }
+
+    std::cout << "Your opponent is " << chosenPlayer->getName() << "!" << std::endl;
+
+    while (true) {
+        std::cout << "1) Play a round?\n";
+        std::cout << "2) Quit?\n";
+        std::cout << "Choice: ";
+        std::cin >> choice;
+
+        if (choice == 2) {
+            std::cout << "Game Over" << std::endl;
+            break;
+        }
+
+        while (true) {
+            std::cout << "Enter an attack: ";
+            std::cin >> input;
+            if (input == "Ro" || input == "Sham" || input == "Bo") {
+                break;
+            }
+            std::cout << "Invalid attack!" << std::endl;
+        }
+
+        if (chosenPlayer->playRound(input)) {
+            std::cout << chosenPlayer->getName() << " chose " << chosenPlayer->getAttack() << "! You win!" << std::endl;
+        } else {
+            std::cout << chosenPlayer->getName() << " chose " << chosenPlayer->getAttack() << "! You lose..." << std::endl;
+        }
+    }
+
+    return 0;
+}
+    
+
+This study guide will help you understand the C++ implementation of the Ro-Sham-Bo game.
+
+## Included Libraries
+
+```cpp
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cstdlib>
+```
+
+These libraries are included for input/output operations, string manipulation, and random number generation.
+
+## RoshamboPlayer Class
+
+```cpp
+class RoshamboPlayer {
+private:
+    std::string playerName;
+    std::string attack;
+    int roLimit;
+    int shamBoLimit;
+```
+
+The `RoshamboPlayer` class contains four private attributes: playerName, attack, roLimit, and shamBoLimit.
+
+### Constructor
+
+```cpp
+public:
+    RoshamboPlayer(const std::string& name, int roLimit, int shamBoLimit)
+        : playerName(name), roLimit(roLimit), shamBoLimit(shamBoLimit) {
+        srand(time(0));
+    }
+```
+
+The constructor initializes the playerName, roLimit, and shamBoLimit attributes, and seeds the random number generator.
+
+### playRound Method
+
+```cpp
+bool playRound(const std::string& playerAttack) {
+    int randomValue = rand() % 101;
+    if (randomValue < roLimit) {
+        attack = "Ro";
+    } else if (randomValue < shamBoLimit) {
+        attack = "Sham";
+    } else {
+        attack = "Bo";
+    }
+
+    if (playerAttack == attack) {
+        return false;
+    } else if ((playerAttack == "Ro" && attack == "Sham") || (playerAttack == "Sham" && attack == "Bo") || (playerAttack == "Bo" && attack == "Ro")) {
+        return false;
+    } else {
+        return true;
+    }
+}
+```
+
+The `playRound` method takes the player's attack as an input, generates the computer's attack based on roLimit and shamBoLimit, and returns `true` if the player wins or `false` if the computer wins or the game is a draw.
+
+### getName and getAttack Methods
+
+```cpp
+std::string getName() const {
+    return playerName;
+}
+
+std::string getAttack() const {
+    return attack;
+}
+```
+
+These two methods are simple getters for the playerName and attack attributes.
+
+## Main Function
+
+```cpp
+int main() {
+```
+
+The main function handles user input and game logic.
+
+### Create Players
+
+```cpp
+RoshamboPlayer p1("R. Dorothy", 30, 60);
+RoshamboPlayer p2("Johnny 5", 40, 85);
+RoshamboPlayer* chosenPlayer;
+```
+
+Two `RoshamboPlayer` objects are created, and a pointer to the chosen player is declared.
+
+### Choose Opponent
+
+```cpp
+std::cout << "[Ro-Sham-Bo Player]\n";
+// ... (omitted for brevity) ...
+std::cin >> choice;
+
+if (choice == 1) {
+    chosenPlayer = &p1;
+} else {
+    chosenPlayer = &p2;
+}
+```
+
+The user is prompted to choose an opponent, and the chosenPlayer pointer is set accordingly.
+
+### Game Loop
+
+```cpp
+while (true) {
+    // ... (omitted for brevity) ...
+
+    if (choice == 2) {
+        std::cout << "Game Over" << std::endl;
+        break;
+    }
+
+    // ... (omitted for brevity) ...
+
+    if (chosenPlayer->playRound(input)) {
+        std::cout << chosenPlayer->getName() << " chose " << chosenPlayer->getAttack() << "! You win!" << std::endl;
+    } else {
+        std::cout << chosenPlayer->getName() << " chose " << chosenPlayer->getAttack() << "! You lose..." << std::endl;
+    }
+}
+```
+
+The game loop continues until the user chooses to quit. Inside the loop, the user is prompted to play a round or quit. If the user chooses to play a round, they are prompted to enter an attack ("Ro", "Sham", or "Bo"). If the user's input is invalid, they are prompted again until they provide valid input.
+
+Once the user has entered a valid attack, the `playRound` method of the `chosenPlayer` object is called with the user's input. The method's return value determines whether the player has won or lost. The loop then repeats, prompting the user to play another round or quit.
+
+The game loop ends when the user chooses to quit, and the program displays "Game Over".
+
+```cpp
+return 0;
+}
+```
+
+The main function returns 0 to indicate successful execution.
+
+This study guide covers the key concepts and code implementation of the Ro-Sham-Bo game in C++. By understanding the different components of the program, you can gain a deeper understanding of C++ programming, object-oriented programming, and game development.
+
 ## Quizzes
 
 Throughout the module, there will be quizzes to test your knowledge on the topics we have covered. These quizzes will help you assess your understanding and identify areas where you may need to review.
