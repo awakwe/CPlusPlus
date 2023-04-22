@@ -1648,6 +1648,159 @@ Below is a component-by-component explanation of the code:
 
 The program will keep looping through the game until the user chooses to quit.
         
+# Multi-Converter study guide
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    float F;
+    cout << "Multi-Converter" << endl;
+    cout << "Enter a value in Fahrenheit: ";
+    cin >> F;
+    cout << endl;
+
+    float K = (F - 32) * 5 / 9 + 273.15;
+    int k = static_cast<int>(K);
+
+    cout << F << "F is approximately " << K << " in Kelvin." << endl;
+    cout << "If we cast it to an int, it becomes " << k << "K." << endl;
+    cout << endl;
+
+    int X;
+    cout << "What would you like to change this by? ";
+    cin >> X;
+    cout << endl;
+
+    int newK = k + X;
+    float newF = (newK - 273.15) * 9 / 5 + 32;
+
+    cout << "We now have " << newK << "K." << endl;
+    cout << newK << "K is approximately " << newF << "F in Fahrenheit." << endl;
+}
+```
+
+Here's a breakdown of each component in the code:
+
+1. `#include <iostream>`: This line is a preprocessor directive that includes the iostream header file, which is required for input/output (I/O) operations using C++ streams.
+
+2. `using namespace std;`: This line tells the compiler to use the standard namespace (std), which provides access to standard functions and objects such as cout and cin without having to use the prefix "std::".
+
+3. `int main() { ... }`: The main function is the entry point of the C++ program. It is where the program starts executing.
+
+4. Variable declarations:
+   - `float F;`: This variable stores the user input for the temperature in Fahrenheit.
+   - `float K;`: This variable stores the calculated temperature in Kelvin.
+   - `int k;`: This variable stores the integer value of the temperature in Kelvin.
+   - `int X;`: This variable stores the user input for the value to change the temperature.
+   - `int newK;`: This variable stores the updated temperature in Kelvin.
+   - `float newF;`: This variable stores the updated temperature in Fahrenheit.
+
+5. `cin >> F;`: This line reads the user input for the temperature in Fahrenheit and stores it in the variable F.
+
+6. `float K = (F - 32) * 5 / 9 + 273.15;`: This line calculates the temperature in Kelvin using the formula to convert Fahrenheit to Kelvin and stores it in the variable K.
+
+7. `int k = static_cast<int>(K);`: This line safely casts the float value of K to an integer and stores it in the variable k.
+
+8. The following `cout` statements print the input temperature in Fahrenheit, the calculated temperature in Kelvin, and the integer value of the temperature in Kelvin.
+
+9. `cin >> X;`: This line reads the user input for the value to change the temperature and stores it in the variable X.
+
+10. `int newK = k + X;`: This line calculates the updated temperature in Kelvin by adding the user input X to the integer value k and stores it in the variable newK.
+
+11. `float newF = (newK - 273.15) * 9 / 5 + 32;`: This line calculates the updated temperature in Fahrenheit using the formula to convert Kelvin to Fahrenheit and stores it in the variable newF.
+
+12. The following `cout` statements print the updated temperature in Kelvin and the updated temperature in Fahrenheit.
+
+This code takes a temperature in Fahrenheit as input, converts it to Kelvin, and then adjusts the temperature by an integer value provided by the user before converting it back to Fahrenheit and displaying the results.
+
+
+# Vending Machine study guide
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    float x;
+    float change;
+    char y;
+    char Z;
+
+    cout << "[Vending Machine Simulation]" << endl;
+    cout << "Put your money in the machine: ";
+    cin >> x;
+    cout << endl;
+
+    do {
+        cout << "Here's what you can buy:" << endl;
+        cout << "A) Bag of Computer Chips ($2)" << endl;
+        cout << "B) Infinite Loop Bar ($1.50)" << endl;
+        cout << "Selection: ";
+        cin >> y;
+        
+        if (y == 'A') {
+            float price = 2;
+            if (x >= price) {
+                cout << "Okay, you bought a Bag of Computer Chips!" << endl;
+                change = x - price;
+                x = change;
+            } else {
+                cout << "Sorry, you only have $" << x << " left." << endl;
+            }
+        } else if (y == 'B') {
+            float price = 1.50;
+            if (x >= price) {
+                cout << "Okay, you bought an Infinite Loop Bar!" << endl;
+                change = x - price;
+                x = change;
+            } else {
+                cout << "Sorry, you only have $" << x << " left." << endl;
+            }
+        } else {
+            cout << "Invalid selection." << endl;
+        }
+
+        cout << endl;
+        cout << "Do you want to buy anything else? (Y/N): ";
+        cin >> Z;
+    } while (Z == 'Y' || Z == 'y');
+
+    cout << "Ending the Vending Machine simulation." << endl;
+}
+
+```
+Here's a breakdown of each component in the code:
+
+1. `#include <iostream>`: This line is a preprocessor directive that includes the iostream header file, which is required for input/output (I/O) operations using C++ streams.
+
+2. `using namespace std;`: This line tells the compiler to use the standard namespace (std), which provides access to standard functions and objects such as cout and cin without having to use the prefix "std::".
+
+3. `int main() { ... }`: The main function is the entry point of the C++ program. It is where the program starts executing.
+
+4. Variable declarations:
+   - `float x;`: This variable stores the amount of money the user inputs.
+   - `float change;`: This variable stores the change after a purchase.
+   - `char y;`: This variable stores the user's selection of the product.
+   - `char Z;`: This variable stores the user's decision on whether to buy anything else.
+
+5. `cout << "[Vending Machine Simulation]" << endl;`: This line prints the title of the simulation and moves to the next line using "endl".
+
+6. `cin >> x;`: This line reads the user input for the amount of money and stores it in the variable x.
+
+7. The `do { ... } while (Z == 'Y' || Z == 'y');` loop repeats the vending machine simulation until the user decides not to buy anything else (when Z is not 'Y' or 'y').
+
+8. Inside the loop, the program presents the available products and asks the user to choose one.
+
+9. The `if (y == 'A') { ... } else if (y == 'B') { ... } else { ... }` block checks the user's selection and processes the purchase accordingly.
+
+10. After the purchase or an invalid selection, the program asks the user if they want to buy anything else and stores the response in the variable Z.
+
+11. Finally, when the user decides not to buy anything else, the program prints "Ending the Vending Machine simulation." and exits the main function, terminating the program.
+
+
+
 
 # Final exam 
 
