@@ -1024,6 +1024,235 @@ In the given code example, boolalpha is used in the else if block that handles t
 Q: What happens if boolalpha is not set in the given code example?
 
 If boolalpha is not set in the given code example, the bool values entered by the user would be output as 0 or 1, which represent false and true, respectively. Setting boolalpha ensures that the output is more human-readable by using the words "false" and "true" instead.
+## Labs
+
+# Lab13A: The Architect - C++ Study Guide
+
+
+```cpp
+#include <iostream>
+
+class BuildingBlueprint {
+private:
+    int stories;
+    int apartments;
+    float occupancyRate;
+    bool fullyOccupied;
+
+public:
+    // Default constructor
+    BuildingBlueprint() : stories(10), apartments(20), occupancyRate(1.0), fullyOccupied(true) {}
+
+    // Overloaded (Argument) Constructor
+    BuildingBlueprint(int stories, int apartments, float occupancyRate)
+        : stories(stories), apartments(apartments), occupancyRate(occupancyRate) {
+        fullyOccupied = (occupancyRate == 1.0);
+    }
+
+    // Getters
+    int getStories() const {
+        return stories;
+    }
+
+    int getApartments() const {
+        return apartments;
+    }
+
+    float getOccupancyRate() const {
+        return occupancyRate;
+    }
+
+    bool isFullyOccupied() const {
+        return fullyOccupied;
+    }
+
+    // Setters
+    void setOccupancyRate(float newOccupancyRate) {
+        occupancyRate = newOccupancyRate;
+        fullyOccupied = (occupancyRate == 1.0);
+    }
+};
+
+int main() {
+    // Create two building objects
+    BuildingBlueprint buildingOne;
+    BuildingBlueprint buildingTwo(30, 30, 0.75);
+
+    std::cout << "Year 2020:\n";
+    std::cout << "Building 1 has " << buildingOne.getStories() << " floors, " << buildingOne.getApartments() << " apartments, and is " << buildingOne.getOccupancyRate() * 100 << "% occupied. Full? " << (buildingOne.isFullyOccupied() ? "true" : "false") << std::endl;
+    std::cout << "Building 2 has " << buildingTwo.getStories() << " floors, " << buildingTwo.getApartments() << " apartments, and is " << buildingTwo.getOccupancyRate() * 100 << "% occupied. Full? " << (buildingTwo.isFullyOccupied() ? "true" : "false") << std::endl;
+
+    std::cout << "Many years pass.\n";
+
+    // Update occupancy rates
+    buildingOne.setOccupancyRate(0.0);
+    buildingTwo.setOccupancyRate(1.0);
+
+    std::cout << "Year 2043:\n";
+    std::cout << "Building 1 has " << buildingOne.getStories() << " floors, " << buildingOne.getApartments() << " apartments, and is " << buildingOne.getOccupancyRate() * 100 << "% occupied. Full? " << (buildingOne.isFullyOccupied() ? "true" : "false") << std::endl;
+    std::cout << "Building 2 has " << buildingTwo.getStories() << " floors, " << buildingTwo.getApartments() << " apartments, and is " << buildingTwo.getOccupancyRate() * 100 << "% occupied. Full? " << (buildingTwo.isFullyOccupied() ? "true" : "false") << std::endl;
+
+    std::cout << "Looks like people prefer taller buildings.\n";
+
+    return 0;
+}
+```
+
+
+This study guide covers the C++ solution for the Lab13A: The Architect. It explains the code implementation of the BuildingBlueprint class and its usage in the main function.
+
+BuildingBlueprint Class
+Attributes
+
+The BuildingBlueprint class has four private attributes:
+
+stories: an integer representing the number of stories the building has.
+apartments: an integer representing the number of apartments the building has.
+occupancyRate: a float representing the occupancy rate of the building (a number between 0 and 1).
+fullyOccupied: a boolean indicating if the building is fully occupied (true if the occupancy rate is 1, otherwise false).
+Constructors
+
+The class has two constructors:
+
+Default constructor: Initializes the attributes with default values (10 stories, 20 apartments, 100% occupancy, and fully occupied).
+Overloaded (Argument) constructor: Accepts custom values for the number of stories, number of apartments, and occupancy rate. It sets the fullyOccupied attribute based on the provided occupancy rate.
+Methods (Behavior)
+
+The class has getters and setters for the following attributes:
+
+Getters and Setters for occupancyRate.
+Getters for stories, apartments, and fullyOccupied.
+Usage in the main function
+
+Create two BuildingBlueprint objects:
+
+buildingOne using the default constructor.
+buildingTwo using the overloaded (argument) constructor with custom values (30 stories, 30 apartments, and 75% occupancy).
+
+Print out the information of buildingOne and buildingTwo using the getters.
+
+Update the occupancy rates of both buildings:
+
+Set the occupancy rate of buildingOne to 0%.
+Set the occupancy rate of buildingTwo to 100%.
+
+Print out the updated information of both buildings using the getters.
+
+The output demonstrates the changes in occupancy rates over time and concludes with a remark about people's preference for taller buildings.
+
+Conclusion
+
+This study guide explains the C++ solution for the Lab13A: The Architect problem, including the BuildingBlueprint class and its usage in the main function. Understanding the class design, attributes, constructors, and methods will help you to implement similar classes for other problems.
+
+## Code Explanation
+
+This C++ code defines the `BuildingBlueprint` class and uses it in the `main` function to demonstrate the changes in building occupancy rates over time.
+
+ Include
+
+```cpp
+#include <iostream>
+```
+
+This line includes the `<iostream>` header file, which provides facilities for input and output streams.
+
+ BuildingBlueprint Class
+
+```cpp
+class BuildingBlueprint {
+private:
+    int stories;
+    int apartments;
+    float occupancyRate;
+    bool fullyOccupied;
+```
+
+This section defines the `BuildingBlueprint` class and declares its private attributes:
+
+- `stories`: an integer representing the number of stories the building has.
+- `apartments`: an integer representing the number of apartments the building has.
+- `occupancyRate`: a float representing the occupancy rate of the building (between 0 and 1).
+- `fullyOccupied`: a boolean indicating if the building is fully occupied (true if the occupancy rate is 1, otherwise false).
+
+```cpp
+public:
+    // Default constructor
+    BuildingBlueprint() : stories(10), apartments(20), occupancyRate(1.0), fullyOccupied(true) {}
+```
+
+The default constructor initializes the attributes with default values (10 stories, 20 apartments, 100% occupancy, and fully occupied).
+
+```cpp
+    // Overloaded (Argument) Constructor
+    BuildingBlueprint(int stories, int apartments, float occupancyRate)
+        : stories(stories), apartments(apartments), occupancyRate(occupancyRate) {
+        fullyOccupied = (occupancyRate == 1.0);
+    }
+```
+
+The overloaded (argument) constructor accepts custom values for the number of stories, number of apartments, and occupancy rate. It sets the `fullyOccupied` attribute based on the provided occupancy rate.
+
+```cpp
+    // Getters
+```
+
+This section declares the getter methods for each attribute. These methods return the current value of the respective attribute.
+
+```cpp
+    // Setters
+```
+
+This section declares the setter method for the `occupancyRate` attribute. The method updates the `occupancyRate` and `fullyOccupied` attributes based on the provided value.
+
+ Main Function
+
+```cpp
+int main() {
+```
+
+This line defines the entry point of the program, the `main` function.
+
+```cpp
+    // Create two building objects
+    BuildingBlueprint buildingOne;
+    BuildingBlueprint buildingTwo(30, 30, 0.75);
+```
+
+This block creates two `BuildingBlueprint` objects:
+
+- `buildingOne`: using the default constructor.
+- `buildingTwo`: using the overloaded constructor with custom values (30 stories, 30 apartments, and 75% occupancy).
+
+```cpp
+    // Output initial information
+```
+
+This block outputs the initial information of both buildings using the getter methods.
+
+```cpp
+    // Update occupancy rates
+    buildingOne.setOccupancyRate(0.0);
+    buildingTwo.setOccupancyRate(1.0);
+```
+
+This block updates the occupancy rates of both buildings:
+
+- `buildingOne`: set to 0%.
+- `buildingTwo`: set to 100%.
+
+```cpp
+    // Output updated information
+```
+
+This block outputs the updated information of both buildings using the getter methods.
+
+```cpp
+    return 0;
+}
+```
+
+This line indicates the successful completion of the program by returning 0.
+
 
                                                     
 ## Quizzes
