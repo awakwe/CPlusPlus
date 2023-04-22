@@ -1608,7 +1608,7 @@ std::string getAttack() const {
 
 These two methods are simple getters for the playerName and attack attributes.
 
-## Main Function
+### Main Function
 
 ```cpp
 int main() {
