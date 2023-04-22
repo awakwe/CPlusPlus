@@ -1254,7 +1254,181 @@ This block outputs the updated information of both buildings using the getter me
 This line indicates the successful completion of the program by returning 0.
 
 
-                                                    
+
+# Final exam 
+
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int x;
+    int v;
+    string s;
+    int V1 = 13;
+    string S1 = "Spades";
+    int V2 = 11;
+    string S2 = "Hearts";
+
+    cout << "[Famous Card Hands]" << endl;
+    cout << "1) Dead Man's Hand" << endl;
+    cout << "2) Maverick Hand" << endl;
+    cout << "Card: ";
+    cin >> x;
+
+    switch (x) {
+        case 1:
+            cout << "We have Ace of Clubs, 8 of Spades, and 8 of Clubs. Which card is missing?" << endl;
+            cout << "Value: ";
+            cin >> v;
+            cout << "Suite: ";
+            cin >> s;
+
+            if (v < 10) {
+                cout << "You guessed " << v << " of " << s << "." << endl;
+            }
+            if (v == 10) {
+                cout << "You guessed Jack of " << s << "." << endl;
+            }
+            if (v == 11) {
+                cout << "You guessed Queen of " << s << "." << endl;
+            }
+            if (v == 12) {
+                cout << "You guessed King of " << s << "." << endl;
+            }
+            if (v == 13) {
+                cout << "You guessed Ace of " << s << "." << endl;
+            }
+
+            if (v == V1 && s == S1) {
+                cout << "Correct!";
+            } else {
+                cout << "Incorrect...";
+            }
+            break;
+
+        case 2:
+            cout << "We have Queen of Spades, Jack of Hearts, Jack of Spades, and Jack of Clubs. Which card is missing?" << endl;
+            cout << "Value: ";
+            cin >> v;
+            cout << "Suite: ";
+            cin >> s;
+
+            if (v < 10) {
+                cout << "You guessed " << v << " of " << s << "." << endl;
+            }
+            if (v == 10) {
+                cout << "You guessed Jack of " << s << "." << endl;
+            }
+            if (v == 11) {
+                cout << "You guessed Queen of " << s << "." << endl;
+            }
+            if (v == 12) {
+                cout << "You guessed King of " << s << "." << endl;
+            }
+            if (v == 13) {
+                cout << "You guessed Ace of " << s << "." << endl;
+            }
+
+            if (v == V2 && s == S2) {
+                cout << "Correct!";
+            } else {
+                cout << "Incorrect...";
+            }
+            break;
+    }
+    return 0;
+}
+```
+    
+This code is a simple C++ program that simulates a card guessing game based on two famous card hands: "Dead Man's Hand" and "Maverick Hand". The user has to guess the missing card in each hand, and the program provides feedback on whether the guess is correct or incorrect.
+
+Here's a component-by-component breakdown of the code:
+
+1. Header includes and namespace declaration:
+
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+```
+The code imports the `iostream` and `string` libraries, and declares the use of the `std` namespace.
+
+2. Main function:
+
+
+```cpp
+int main() {
+```
+The main function is where the program execution starts.
+
+3. Variable declarations:
+
+
+```cpp
+int x;
+int v;
+string s;
+int V1 = 13;
+string S1 = "Spades";
+int V2 = 11;
+string S2 = "Hearts";
+```
+Variables are declared and initialized with values for the correct missing cards.
+
+4. Introduction and input:
+
+
+```cpp
+cout << "[Famous Card Hands]" << endl;
+cout << "1) Dead Man's Hand" << endl;
+cout << "2) Maverick Hand" << endl;
+cout << "Card: ";
+cin >> x;
+```
+The program introduces the two card hands and prompts the user to select one.
+
+5. Switch statement:
+
+
+```cpp
+switch (x) {
+```
+A switch statement is used to handle the two cases based on the user's input.
+
+6. Case 1: Dead Man's Hand
+
+
+```cpp
+case 1:
+    ...
+    break;
+```
+In this case, the program describes the Dead Man's Hand, prompts the user for their guess, and provides feedback on whether the guess is correct or incorrect.
+
+7. Case 2: Maverick Hand
+
+
+```cpp
+case 2:
+    ...
+    break;
+```
+In this case, the program describes the Maverick Hand, prompts the user for their guess, and provides feedback on whether the guess is correct or incorrect.
+
+8. End of the switch statement and main function:
+
+
+```cpp
+}
+return 0;
+}
+```
+The switch statement and the main function are closed. The program returns 0 to indicate successful execution.    
+    
 ## Quizzes
 
 Throughout the module, there will be quizzes to test your knowledge on the topics we have covered. These quizzes will help you assess your understanding and identify areas where you may need to review.
