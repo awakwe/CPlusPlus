@@ -1026,7 +1026,7 @@ Q: What happens if boolalpha is not set in the given code example?
 If boolalpha is not set in the given code example, the bool values entered by the user would be output as 0 or 1, which represent false and true, respectively. Setting boolalpha ensures that the output is more human-readable by using the words "false" and "true" instead.
 ## Labs
 
-# Lab13A: The Architect - C++ Study Guide
+# The Architect - C++ Study Guide
 
 
 ```cpp
