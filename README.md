@@ -1277,7 +1277,7 @@ public:
         blue = b;
     }
 
-    void printRGB() {
+    void printRGB() const {
         std::cout << red << " " << green << " " << blue;
     }
 };
