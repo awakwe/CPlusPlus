@@ -1258,9 +1258,8 @@ This line indicates the successful completion of the program by returning 0.
 
 ```cpp
 #include <iostream>
-#include <vector>
 #include <string>
-#include <fstream>
+using namespace std;
 
 class Pixel {
 public:
@@ -1277,115 +1276,170 @@ public:
         blue = b;
     }
 
-    void printRGB() const {
-        std::cout << red << " " << green << " " << blue;
+    void printRGB() {
+        cout << red << " " << green << " " << blue;
     }
 };
 
-int main() {
-    std::cout << "[Color Art Program]" << std::endl;
-
-    int width, height;
-    std::cout << "Enter an image width: ";
-    std::cin >> width;
-    std::cout << "Enter an image height: ";
-    std::cin >> height;
-
-    int red, green, blue;
-    std::cout << "Enter the fill color's red value: ";
-    std::cin >> red;
-    std::cout << "Enter the fill color's green value: ";
-    std::cin >> green;
-    std::cout << "Enter the fill color's blue value: ";
-    std::cin >> blue;
-
-    std::vector<std::vector<Pixel>> image(height, std::vector<Pixel>(width, Pixel(red, green, blue)));
-
-    int choice = 0;
-    while (choice != 4) {
-        std::cout << "What will you do?" << std::endl;
-        std::cout << "1) Fill in a pixel" << std::endl;
-        std::cout << "2) Fill in a line" << std::endl;
-        std::cout << "3) Print the image" << std::endl;
-        std::cout << "4) Quit" << std::endl;
-        std::cout << "Choice? ";
-        std::cin >> choice;
-
-        if (choice == 1) {
-            int row, col;
-            std::cout << "Row: ";
-            std::cin >> row;
-            std::cout << "Column: ";
-            std::cin >> col;
-
-            std::cout << "New Red Color: ";
-            std::cin >> red;
-            std::cout << "New Green Color: ";
-            std::cin >> green;
-            std::cout << "New Blue Color: ";
-            std::cin >> blue;
-
-            image[row][col].changeRGB(red, green, blue);
-        } else if (choice == 2) {
-            // Implement Fill in a line functionality if needed
-        } else if (choice == 3) {
-            std::cout << "PPM Image Contents" << std::endl;
-            std::cout << "P3" << std::endl;
-            std::cout << width << " " << height << std::endl;
-            std::cout << "255" << std::endl;
-
-            for (const auto& row : image) {
-                for (const auto& pixel : row) {
-                    pixel.printRGB();
-                    std::cout << " ";
-                }
-                std::cout << std::endl;
-            }
+void initializeArray(Pixel **image, int width, int height, int red, int green, int blue) {
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            image[i][j] = Pixel(red, green, blue);
         }
     }
+}
+
+void printImage(Pixel **image, int width, int height) {
+    cout << "PPM Image Contents" << endl;
+    cout << "P3" << endl;
+    cout << width << " " << height << endl;
+    cout << "255" << endl;
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            image[i][j].printRGB();
+            cout << " ";
+        }
+        cout << endl;
+    }
+}
+
+void fillPixel(Pixel **image, int width, int height) {
+    int row, column, red, green, blue;
+    cout << "Row: ";
+    cin >> row;
+    cout << "Column: ";
+    cin >> column;
+    cout << "New Red Color: ";
+    cin >> red;
+    cout << "New Green Color: ";
+    cin >> green;
+    cout << "New Blue Color: ";
+    cin >> blue;
+    if (row >= 0 && row < height && column >= 0 && column < width && red >= 0 && red <= 255 && green >= 0 && green <= 255 && blue >= 0 && blue <= 255) {
+        image[row][column].changeRGB(red, green, blue);
+    } else {
+        cout << "Invalid information!" << endl;
+    }
+}
+
+int main() {
+    cout << "[Color Art Program]" << endl;
+    int width, height, red, green, blue;
+    cout << "Enter an image width: ";
+    cin >> width;
+    cout << "Enter an image height: ";
+    cin >> height;
+    cout << "Enter the fill color's red value: ";
+    cin >> red;
+    cout << "Enter the fill color's green value: ";
+    cin >> green;
+    cout << "Enter the fill color's blue value: ";
+    cin >> blue;
+
+    // allocate memory for 2D array
+    Pixel **image = new Pixel*[height];
+    for (int i = 0; i < height; i++) {
+        image[i] = new Pixel[width];
+    }
+
+    // initialize array with fill color
+    initializeArray(image, width, height, red, green, blue);
+
+    int choice;
+    do {
+        cout << endl << "What will you do?" << endl;
+        cout << "1) Fill in a pixel" << endl;
+        cout << "3) Print the image" << endl;
+        cout << "4) Quit" << endl;
+        cout << "Choice? ";
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                fillPixel(image, width, height);
+                break;
+            case 3:
+                printImage(image, width, height);
+                break;
+            case 4:
+                cout << "[Exiting Color Art Program]" << endl;
+                break;
+            default:
+                cout << "Invalid choice!" << endl;
+                break;
+        }
+    } while (choice != 4);
+
+    // free memory for 2D array
+    for (int i = 0; i < height; i++) {
+        delete[] image[i];
+    }
+    delete[] image;
 
     return 0;
 }
 ```
 
-Here is a breakdown of the code components:
+Sure, here's a breakdown of the code component by component:
 
-1. `#include <iostream>`: This header file includes the necessary components for input and output (I/O) operations, such as `std::cin` and `std::cout`.
+#include <iostream>
+This is a preprocessor directive that allows the use of input and output stream objects, like "cin" and "cout".
 
-2. `#include <vector>`: This header file includes the `std::vector` container which is used for storing dynamic arrays.
+#include <string>
+This is a preprocessor directive that allows the use of the "string" class.
 
-3. `#include <string>`: This header file includes the `std::string` class, which is used for handling and manipulating strings.
+using namespace std;
+This line brings all of the identifiers in the "std" namespace into the current scope, making it unnecessary to prefix them with "std::".
 
-4. `#include <fstream>`: This header file includes file stream classes used for file I/O operations.
+class Pixel { ... };
+This declares a class named "Pixel", which has three member variables ("red", "green", and "blue") and three member functions (a default constructor, a parameterized constructor, and two other member functions).
 
-5. `class Pixel`: This class defines a `Pixel` object with three integer attributes: `red`, `green`, and `blue`.
+Pixel() : red(255), green(255), blue(255) {}
+This is the definition of the default constructor for the "Pixel" class, which initializes the "red", "green", and "blue" member variables to 255.
 
-6. `Pixel()` constructor: The default constructor initializes the color attributes (red, green, and blue) to 255.
+Pixel(int r, int g, int b) : red(r), green(g), blue(b) {}
+This is the definition of a parameterized constructor for the "Pixel" class, which initializes the "red", "green", and "blue" member variables to the values passed as arguments.
 
-7. `Pixel(int r, int g, int b)` constructor: This overloaded constructor takes user input and assigns it to the color attributes.
+void changeRGB(int r, int g, int b) { ... }
+This member function changes the values of the "red", "green", and "blue" member variables to the values passed as arguments.
 
-8. `void changeRGB(int r, int g, int b)`: This member function updates the color attributes with new values.
+void printRGB() { ... }
+This member function prints the values of the "red", "green", and "blue" member variables to the console.
 
-9. `void printRGB() const`: This member function prints the color attributes in order with a single space between each value.
+void initializeArray(Pixel **image, int width, int height, int red, int green, int blue) { ... }
+This function takes a 2D array of "Pixel" objects, its dimensions, and a fill color, and initializes each element of the array to a "Pixel" object with the specified fill color.
 
-10. `int main()`: The main function of the program.
+void printImage(Pixel **image, int width, int height) { ... }
+This function takes a 2D array of "Pixel" objects and its dimensions, and prints the contents of the array to the console in PPM image format.
 
-11. `std::vector<std::vector<Pixel>> image(...)`: This 2D vector of `Pixel` objects represents the image.
+void fillPixel(Pixel **image, int width, int height) { ... }
+This function prompts the user to input the row and column of a specific "Pixel" object in a 2D array, as well as new values for its "red", "green", and "blue" member variables, and changes those values if the input is valid.
 
-12. `int choice = 0`: This variable stores the user's menu choice.
+int main() { ... }
+This is the main function of the program, which takes user input for the dimensions and fill color of an image, allocates memory for a 2D array of "Pixel" objects, initializes the array with the fill color, and provides a menu for the user to fill in pixels, print the image, or quit the program.
 
-13. `while (choice != 4)`: This loop continues until the user chooses to quit (option 4).
+Pixel **image = new Pixel*[height];
+This dynamically allocates memory for a 2D array of "Pixel" objects, with dimensions specified by the "height" and "width" variables.
 
-14. `if (choice == 1)`: This block handles the case when the user chooses to fill in a pixel.
+for (int i = 0; i < height; i++) { image[i] = new Pixel[width]; }
+This loop initializes each row of the 2D array with a new array of "Pixel" objects, with length specified by the "width" variable.
 
-15. `else if (choice == 2)`: This block is reserved for handling the case when the user chooses to fill in a line (not implemented).
+red, green, blue);```
+This function call initializes each element of the 2D array with a new "Pixel" object with the fill color specified by the "red", "green", and "blue" variables.
 
-16. `else if (choice == 3)`: This block handles the case when the user chooses to print the image. It outputs the PPM image contents in the required format.
+ ```do { ... } while (choice != 4);```
+This loop repeatedly prompts the user to choose an action (fill in a pixel, print the image, or quit the program) until the user chooses to quit.
 
-17. `return 0`: The main function returns 0 to indicate successful execution.
+ ```switch (choice) { ... }```
+This switch statement executes the appropriate action based on the user's choice.
 
-This code provides a solution to the Color Art Program assignment, allowing users to interactively create and modify a PPM image by filling in pixels with specific RGB values.
+```for (int i = 0; i < height; i++) { delete[] image[i]; }```
+This loop deallocates memory for each row of the 2D array.
 
+ ```delete[] image;```
+This deallocates memory for the 2D array itself.
+
+ ```return 0;```
+This indicates that the program has executed successfully and returns control to the operating system.
 
 # Ro-Sham-Bo Game: A C++ Study Guide
 
