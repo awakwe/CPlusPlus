@@ -1253,6 +1253,101 @@ This block outputs the updated information of both buildings using the getter me
 
 This line indicates the successful completion of the program by returning 0.
 
+# Color art lab
+
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
+
+class Pixel {
+public:
+    int red;
+    int green;
+    int blue;
+
+    Pixel() : red(255), green(255), blue(255) {}
+    Pixel(int r, int g, int b) : red(r), green(g), blue(b) {}
+
+    void changeRGB(int r, int g, int b) {
+        red = r;
+        green = g;
+        blue = b;
+    }
+
+    void printRGB() {
+        std::cout << red << " " << green << " " << blue;
+    }
+};
+
+int main() {
+    std::cout << "[Color Art Program]" << std::endl;
+
+    int width, height;
+    std::cout << "Enter an image width: ";
+    std::cin >> width;
+    std::cout << "Enter an image height: ";
+    std::cin >> height;
+
+    int red, green, blue;
+    std::cout << "Enter the fill color's red value: ";
+    std::cin >> red;
+    std::cout << "Enter the fill color's green value: ";
+    std::cin >> green;
+    std::cout << "Enter the fill color's blue value: ";
+    std::cin >> blue;
+
+    std::vector<std::vector<Pixel>> image(height, std::vector<Pixel>(width, Pixel(red, green, blue)));
+
+    int choice = 0;
+    while (choice != 4) {
+        std::cout << "What will you do?" << std::endl;
+        std::cout << "1) Fill in a pixel" << std::endl;
+        std::cout << "2) Fill in a line" << std::endl;
+        std::cout << "3) Print the image" << std::endl;
+        std::cout << "4) Quit" << std::endl;
+        std::cout << "Choice? ";
+        std::cin >> choice;
+
+        if (choice == 1) {
+            int row, col;
+            std::cout << "Row: ";
+            std::cin >> row;
+            std::cout << "Column: ";
+            std::cin >> col;
+
+            std::cout << "New Red Color: ";
+            std::cin >> red;
+            std::cout << "New Green Color: ";
+            std::cin >> green;
+            std::cout << "New Blue Color: ";
+            std::cin >> blue;
+
+            image[row][col].changeRGB(red, green, blue);
+        } else if (choice == 2) {
+            // Implement Fill in a line functionality if needed
+        } else if (choice == 3) {
+            std::cout << "PPM Image Contents" << std::endl;
+            std::cout << "P3" << std::endl;
+            std::cout << width << " " << height << std::endl;
+            std::cout << "255" << std::endl;
+
+            for (const auto& row : image) {
+                for (const auto& pixel : row) {
+                    pixel.printRGB();
+                    std::cout << " ";
+                }
+                std::cout << std::endl;
+            }
+        }
+    }
+
+    return 0;
+}
+```
+
 
 # Ro-Sham-Bo Game: A C++ Study Guide
 
