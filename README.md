@@ -1348,6 +1348,44 @@ int main() {
 }
 ```
 
+Here is a breakdown of the code components:
+
+1. `#include <iostream>`: This header file includes the necessary components for input and output (I/O) operations, such as `std::cin` and `std::cout`.
+
+2. `#include <vector>`: This header file includes the `std::vector` container which is used for storing dynamic arrays.
+
+3. `#include <string>`: This header file includes the `std::string` class, which is used for handling and manipulating strings.
+
+4. `#include <fstream>`: This header file includes file stream classes used for file I/O operations.
+
+5. `class Pixel`: This class defines a `Pixel` object with three integer attributes: `red`, `green`, and `blue`.
+
+6. `Pixel()` constructor: The default constructor initializes the color attributes (red, green, and blue) to 255.
+
+7. `Pixel(int r, int g, int b)` constructor: This overloaded constructor takes user input and assigns it to the color attributes.
+
+8. `void changeRGB(int r, int g, int b)`: This member function updates the color attributes with new values.
+
+9. `void printRGB() const`: This member function prints the color attributes in order with a single space between each value.
+
+10. `int main()`: The main function of the program.
+
+11. `std::vector<std::vector<Pixel>> image(...)`: This 2D vector of `Pixel` objects represents the image.
+
+12. `int choice = 0`: This variable stores the user's menu choice.
+
+13. `while (choice != 4)`: This loop continues until the user chooses to quit (option 4).
+
+14. `if (choice == 1)`: This block handles the case when the user chooses to fill in a pixel.
+
+15. `else if (choice == 2)`: This block is reserved for handling the case when the user chooses to fill in a line (not implemented).
+
+16. `else if (choice == 3)`: This block handles the case when the user chooses to print the image. It outputs the PPM image contents in the required format.
+
+17. `return 0`: The main function returns 0 to indicate successful execution.
+
+This code provides a solution to the Color Art Program assignment, allowing users to interactively create and modify a PPM image by filling in pixels with specific RGB values.
+
 
 # Ro-Sham-Bo Game: A C++ Study Guide
 
