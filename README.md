@@ -1423,17 +1423,19 @@ This dynamically allocates memory for a 2D array of "Pixel" objects, with dimens
 for (int i = 0; i < height; i++) { image[i] = new Pixel[width]; }
 This loop initializes each row of the 2D array with a new array of "Pixel" objects, with length specified by the "width" variable.
 
-red, green, blue);```
+```cpp                              
+red, green, blue);
+```
 This function call initializes each element of the 2D array with a new "Pixel" object with the fill color specified by the "red", "green", and "blue" variables.
 
- ```
+```
  do { ... } while (choice != 4);
- ```
+```
 This loop repeatedly prompts the user to choose an action (fill in a pixel, print the image, or quit the program) until the user chooses to quit.
 
- ```
+```
  switch (choice) { ... }
- ```
+```
 This switch statement executes the appropriate action based on the user's choice.
 
 ```
@@ -1441,14 +1443,14 @@ for (int i = 0; i < height; i++) { delete[] image[i]; }
 ```
 This loop deallocates memory for each row of the 2D array.
 
- ```
+```
  delete[] image;
- ```
+```
 This deallocates memory for the 2D array itself.
 
- ```
+```
  return 0;
- ```
+```
 This indicates that the program has executed successfully and returns control to the operating system.
 
 # Ro-Sham-Bo Game: A C++ Study Guide
