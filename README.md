@@ -1426,19 +1426,29 @@ This loop initializes each row of the 2D array with a new array of "Pixel" objec
 red, green, blue);```
 This function call initializes each element of the 2D array with a new "Pixel" object with the fill color specified by the "red", "green", and "blue" variables.
 
- ```do { ... } while (choice != 4);```
+ ```
+ do { ... } while (choice != 4);
+ ```
 This loop repeatedly prompts the user to choose an action (fill in a pixel, print the image, or quit the program) until the user chooses to quit.
 
- ```switch (choice) { ... }```
+ ```
+ switch (choice) { ... }
+ ```
 This switch statement executes the appropriate action based on the user's choice.
 
-```for (int i = 0; i < height; i++) { delete[] image[i]; }```
+```
+for (int i = 0; i < height; i++) { delete[] image[i]; }
+```
 This loop deallocates memory for each row of the 2D array.
 
- ```delete[] image;```
+ ```
+ delete[] image;
+ ```
 This deallocates memory for the 2D array itself.
 
- ```return 0;```
+ ```
+ return 0;
+ ```
 This indicates that the program has executed successfully and returns control to the operating system.
 
 # Ro-Sham-Bo Game: A C++ Study Guide
