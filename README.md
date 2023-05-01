@@ -2330,6 +2330,99 @@ Note: The exact range of values for integer data types (`char`, `short`, `int`, 
 
 3. **False**. The main difference between a DO…WHILE loop and a WHILE loop is that a DO…WHILE loop is guaranteed to execute its loop body at least once, regardless of whether the loop condition is true or false. This is because the loop condition is checked after the loop body is executed. In contrast, a WHILE loop checks the loop condition before executing the loop body, so it may not execute the loop body at all if the condition is false from the start. Both DO…WHILE and WHILE loops can result in infinite loops if the loop condition remains true indefinitely.
 
+# Multiple Choice Questions and Answers
+
+## Question 1
+**This special input value is used to allow a user to end a loop:**
+a. Stationary
+b. Sentinel
+c. Stop
+d. Iteration
+
+### Answer
+b. Sentinel
+
+### Explanation
+A sentinel value is a special input value that is used to signal the end of a loop. It is also known as a flag value or a loop control value. When the program reads the sentinel value, it knows that it should terminate the loop and proceed to the next part of the program.
+
+## Question 2
+**The execution of one pass of a loop is referred to as a(n):**
+a. Iteration
+b. Increment
+c. Initialization
+d. Individual
+
+### Answer
+a. Iteration
+
+### Explanation
+An iteration refers to the execution of one pass of a loop. Each time the loop body is executed, it is considered one iteration of the loop.
+
+## Question 3
+**Repetition structures use what type of expression to determine if the block of code should run.**
+a. Boolean
+b. Byte
+c. Bitlocker
+d. Bubble
+
+### Answer
+a. Boolean
+
+### Explanation
+Repetition structures, such as loops, use Boolean expressions to determine if the block of code should run. A Boolean expression evaluates to either true or false. If the expression is true, the loop body will be executed; otherwise, the loop will terminate.
+
+## Question 4
+**Which of these is not a type of loop?**
+a. FOR
+b. DO…WHILE
+c. WHILE…DO
+d. WHILE
+
+### Answer
+c. WHILE…DO
+
+### Explanation
+The common types of loops in programming languages are the FOR loop, the DO…WHILE loop, and the WHILE loop. There is no standard loop type called WHILE…DO.
+
+## Question 5
+**This statement ends a loop immediately:**
+a. HALT
+b. CONTINUE
+c. ESCAPE
+d. BREAK
+
+### Answer
+d. BREAK
+
+### Explanation
+The BREAK statement is used to exit a loop immediately. When the BREAK statement is encountered, the program will exit the current loop and continue executing the code after the loop.
+
+## Question 6
+**This statement skips an iteration of a loop:**
+a. NEXT
+b. CONTINUE
+c. SKIP
+d. BREAK
+
+### Answer
+b. CONTINUE
+
+### Explanation
+The CONTINUE statement is used to skip the current iteration of a loop and move on to the next iteration. When the CONTINUE statement is encountered, the program will skip the remaining code in the loop body and proceed to the next iteration.
+
+## Question 7
+**FOR Loops are often called what type of loop?**
+a. Counting
+b. Correcting
+c. Incrementing
+d. Infinite
+
+### Answer
+a. Counting
+
+### Explanation
+FOR loops are often called counting loops because they are commonly used to iterate a specific number of times based on a counter variable. The counter variable is initialized, incremented (or decremented), and checked against a condition in each iteration of the loop.
+
 
 ## Quizzes
 
