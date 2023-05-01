@@ -2225,6 +2225,95 @@ Here's a breakdown of each component in the code:
 
 14. **False**. Relational operators are evaluated before logical operators in C++.
 
+# Multiple Choice Questions and Answers
+
+## Question 1
+**Which of these is not a property of a good algorithm?**
+A) Unambiguous
+B) Complete
+C) Precise
+D) Complex
+
+### Answer
+D) Complex
+
+### Explanation
+A good algorithm should be unambiguous, complete, and precise. It should have clear and well-defined steps, and it should produce the correct output for any valid input. A complex algorithm is not necessarily a good algorithm, as complexity can make it difficult to understand and maintain. Simplicity and clarity are desirable properties of a good algorithm.
+
+## Question 2
+**What is the shortcut operator to add one (1) to a variable?**
+A) ++
+B) + +
+C) **
+D) @@
+
+### Answer
+A) ++
+
+### Explanation
+The `++` operator is known as the increment operator in C++ and other programming languages. It is used to increase the value of a variable by one (1). For example, if we have a variable `count` with the value `5`, using `count++` will increase its value to `6`.
+
+## List of Primitive Data Types and Their Range of Values
+
+1) `bool`: Represents a boolean value, which can be either `true` or `false`.
+
+2) `char`: Represents a single character. The range of values is typically from `-128` to `127` or from `0` to `255`, depending on the implementation.
+
+3) `unsigned char`: Represents an unsigned character. The range of values is from `0` to `255`.
+
+4) `short`: Represents a short integer. The range of values is typically from `-32,768` to `32,767`.
+
+5) `unsigned short`: Represents an unsigned short integer. The range of values is from `0` to `65,535`.
+
+6) `int`: Represents an integer. The range of values is typically from `-2,147,483,648` to `2,147,483,647`.
+
+7) `unsigned int`: Represents an unsigned integer. The range of values is from `0` to `4,294,967,295`.
+
+8) `float`: Represents a single-precision floating-point number. The range of values depends on the implementation, but it typically includes values from approximately `1.2E-38` to `3.4E+38`.
+
+Note: The exact range of values for integer data types (`char`, `short`, `int`, etc.) may vary depending on the implementation and the architecture of the system. The ranges provided here are based on typical implementations using a 32-bit `int` and 8-bit `char`.
+
+# Arrays, Searching & Sorting Practice Problems
+
+## True/False Questions
+
+1. A single array can hold multiple values of different data types.
+2. Array Lists can have more than one (1) dimension.
+3. A Linear Search is always more efficient than a Binary Search.
+4. Arrays must be sorted for a Binary Search to work correctly.
+
+## Answers and Explanations
+
+1. **False**. A single array can hold multiple values, but all values must be of the same data type. For example, an array of integers can hold multiple integer values, but it cannot hold values of different data types such as floating-point numbers or characters.
+
+2. **False**. The term "Array List" typically refers to a dynamic array or a resizable array, which is a one-dimensional data structure. While multi-dimensional arrays do exist, Array Lists themselves are one-dimensional. If multi-dimensional behavior is needed, one can use an Array List of Array Lists or similar constructs.
+
+3. **False**. A Linear Search has a time complexity of O(n), where n is the number of elements in the array. It involves searching each element of the array one by one until the desired element is found. On the other hand, a Binary Search has a time complexity of O(log n) and is more efficient for large arrays. Binary Search works by repeatedly dividing the sorted array into halves and narrowing down the search interval until the desired element is found.
+
+4. **True**. Arrays must be sorted for a Binary Search to work correctly. Binary Search relies on the fact that the array is sorted to efficiently narrow down the search interval. If the array is not sorted, the Binary Search algorithm may produce incorrect results or fail to find the desired element.
+
+# Selection Structure Practice Problems
+
+## True/False Questions
+
+1. In an IF…ELSE IF…ELSE IF structure, each statement whose expressions evaluate to true will run their block of code.
+2. In an IF…ELSE IF…ELSE IF statement, the first conditional expression that evaluates to true is the only block of code that will run.
+3. In an IF…ELSEIF…ELSEIF statement, the first conditional expression that evaluates to true is the only block of code that will run.
+4. In a program statement, both the IF and ELSE statements will be executed every time.
+5. A DEFAULT CASE is required as part of a SWITCH statement.
+
+## Answers and Explanations
+
+1. **False**. In an IF…ELSE IF…ELSE IF structure, only the block of code corresponding to the first conditional expression that evaluates to true will be executed. Once a true condition is found and its block of code is executed, the program will exit the entire IF…ELSE IF…ELSE IF structure and will not evaluate any further conditions.
+
+2. **True**. In an IF…ELSE IF…ELSE IF statement, the first conditional expression that evaluates to true is the only block of code that will run. Once a true condition is found, the program will execute the corresponding block of code and then exit the entire IF…ELSE IF…ELSE IF structure.
+
+3. **True**. In an IF…ELSEIF…ELSEIF statement (which is equivalent to IF…ELSE IF…ELSE IF), the first conditional expression that evaluates to true is the only block of code that will run. The program will execute the corresponding block of code and then exit the entire IF…ELSEIF…ELSEIF structure.
+
+4. **False**. In a program statement, only one of the IF and ELSE statements will be executed, not both. If the condition in the IF statement evaluates to true, the block of code inside the IF statement will be executed. If the condition evaluates to false, the block of code inside the ELSE statement (if present) will be executed.
+
+5. **False**. A DEFAULT CASE is not required as part of a SWITCH statement. The DEFAULT CASE is optional and is used to specify a block of code that will be executed if none of the CASE values match the expression in the SWITCH statement. If a DEFAULT CASE is not provided and no CASE values match, the SWITCH statement will simply do nothing and the program will continue executing the code after the SWITCH statement.
+
 
 ## Quizzes
 
