@@ -2175,8 +2175,55 @@ Here's a breakdown of each component in the code:
 
 11. Finally, when the user decides not to buy anything else, the program prints "Ending the Vending Machine simulation." and exits the main function, terminating the program.
 
+# Question Bank
+# Data Types and Input/Output Practice Problems in C++
 
+## True/False Questions
 
+1. `count--` is equivalent to `count = count + 1`.
+2. `count++` is equivalent to `count = count + 1`.
+3. Keywords can be used as variable identifiers/names.
+4. Escape sequences are used to print special characters such as `\` and `“`.
+5. Constants are used to make program maintenance easier.
+6. Abstraction refers to the logical grouping of concepts or objects.
+7. Literals are values that are entered directly into code.
+8. Logical operators are evaluated before relational operators.
+9. Strings are a primitive data type.
+10. Brute force is a good approach to programming.
+11. You must declare and initialize a variable in two separate steps.
+12. When assigning a value to a variable, the variable must be on the left of the assignment operator (`=`).
+13. The escape sequence character (`\`) is used to print special characters in an output string.
+14. Logical operators are evaluated before relational operators.
+
+## Answers and Explanations
+
+1. **False**. The `count--` operation is equivalent to `count = count - 1`, which means it decrements the value of `count` by 1.
+
+2. **True**. The `count++` operation is equivalent to `count = count + 1`, which means it increments the value of `count` by 1.
+
+3. **False**. Keywords are reserved words in C++ and cannot be used as variable identifiers/names.
+
+4. **True**. Escape sequences are used to represent special characters in strings. For example, `\\` represents a backslash, and `\"` represents a double quote.
+
+5. **True**. Constants are fixed values that do not change during the execution of a program. They make program maintenance easier by allowing changes to be made in one place.
+
+6. **True**. Abstraction is a programming concept that involves grouping related concepts or objects together to simplify complex systems.
+
+7. **True**. Literals are values that are directly entered into code, such as `5`, `'a'`, or `"Hello"`.
+
+8. **False**. Relational operators are evaluated before logical operators in C++.
+
+9. **False**. In C++, strings are not a primitive data type. They are represented using the `std::string` class from the C++ Standard Library.
+
+10. **False**. Brute force is not always a good approach to programming. It may work for simple problems, but it is often inefficient for complex problems.
+
+11. **False**. You can declare and initialize a variable in the same step. For example: `int count = 5;`.
+
+12. **True**. When assigning a value to a variable, the variable must be on the left side of the assignment operator (`=`). For example: `count = 10;`.
+
+13. **True**. The escape sequence character (`\`) is used to represent special characters in strings. For example, `\\` represents a backslash, and `\"` represents a double quote.
+
+14. **False**. Relational operators are evaluated before logical operators in C++.
 
 
 ## Quizzes
