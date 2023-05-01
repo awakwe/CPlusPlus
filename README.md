@@ -2314,6 +2314,22 @@ Note: The exact range of values for integer data types (`char`, `short`, `int`, 
 
 5. **False**. A DEFAULT CASE is not required as part of a SWITCH statement. The DEFAULT CASE is optional and is used to specify a block of code that will be executed if none of the CASE values match the expression in the SWITCH statement. If a DEFAULT CASE is not provided and no CASE values match, the SWITCH statement will simply do nothing and the program will continue executing the code after the SWITCH statement.
 
+# Repetition Structure Practice Problems
+
+## True/False Questions
+
+1. Only WHILE loops can be nested.
+2. Only FOR loops can be nested.
+3. The main difference between a DO…WHILE and a WHILE loop is that a WHILE loop cannot result in an infinite loop.
+
+## Answers and Explanations
+
+1. **False**. Any type of loop, including WHILE loops, FOR loops, and DO…WHILE loops, can be nested within another loop. Nesting loops means placing one loop inside the body of another loop. This is commonly used for tasks such as iterating over multi-dimensional arrays or performing repeated operations within a loop.
+
+2. **False**. Similar to the explanation for question 1, any type of loop can be nested, not just FOR loops. FOR loops, WHILE loops, and DO…WHILE loops can all be nested within each other or within themselves.
+
+3. **False**. The main difference between a DO…WHILE loop and a WHILE loop is that a DO…WHILE loop is guaranteed to execute its loop body at least once, regardless of whether the loop condition is true or false. This is because the loop condition is checked after the loop body is executed. In contrast, a WHILE loop checks the loop condition before executing the loop body, so it may not execute the loop body at all if the condition is false from the start. Both DO…WHILE and WHILE loops can result in infinite loops if the loop condition remains true indefinitely.
+
 
 ## Quizzes
 
