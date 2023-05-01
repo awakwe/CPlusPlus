@@ -2424,6 +2424,95 @@ a. Counting
 FOR loops are often called counting loops because they are commonly used to iterate a specific number of times based on a counter variable. The counter variable is initialized, incremented (or decremented), and checked against a condition in each iteration of the loop.
 
 
+# OOP (Classes & Objects) Practice Problems
+
+## True/False Questions
+
+1. Encapsulation is enforced by setting class attributes to private.
+2. Coding a class creates a new simple data type.
+3. Methods should be marked private and attributes should be marked public.
+4. Constructors do not have a return type declared in the header.
+
+## Answers and Explanations
+
+1. **True**. Encapsulation is a fundamental concept in object-oriented programming (OOP) that refers to the bundling of data (attributes) and methods (functions) within a class while restricting access to certain components. Encapsulation is enforced by setting class attributes to private (or protected) and providing public methods (getters and setters) to access and modify these attributes. This ensures that the internal state of the object is protected from unauthorized access and modification.
+
+2. **False**. Coding a class does not create a new simple data type; rather, it creates a new complex or composite data type known as a class or user-defined type. Simple data types (also known as primitive data types) include basic types such as integers, floating-point numbers, characters, and booleans. In contrast, classes allow programmers to define custom data types that can contain multiple attributes and methods, making them more complex and versatile.
+
+3. **False**. In general, class attributes should be marked private (or protected) to enforce encapsulation, and methods should be marked public to allow external access to the object's behavior. By marking attributes as private, we prevent direct access to the object's internal state from outside the class. Public methods, including getters and setters, provide controlled access to the object's attributes and allow the object to perform specific actions.
+
+4. **True**. Constructors are special methods in a class that are used to initialize objects of that class. Constructors do not have a return type declared in the header, and their name is the same as the class name. Constructors can have parameters to initialize the attributes of the object, but they do not return any value. In some programming languages (such as C++), if no constructor is explicitly defined, the compiler provides a default constructor with no parameters.
+
+
+
+# Multiple Choice Questions and Answers
+
+## Question 1
+**An object’s state refers to:**
+a. Its set of methods
+b. Its set of data fields with the current values
+c. Its skeleton
+d. Its constructor’s parameters
+
+### Answer
+b. Its set of data fields with the current values
+
+### Explanation
+An object's state refers to the values of its data fields (also known as attributes or properties) at a given point in time. The state represents the current condition or characteristics of the object. For example, if we have a class `Car` with attributes `color` and `speed`, the state of a `Car` object could be represented by the current values of these attributes, such as `color = "red"` and `speed = 60`.
+
+## Question 2
+**Class variables are also called:**
+a. Accessors
+b. Constructors
+c. Attributes
+d. Behavior
+
+### Answer
+c. Attributes
+
+### Explanation
+Class variables, also known as attributes, properties, or data members, are variables that are defined within a class and are used to represent the characteristics or state of an object. Attributes store the data associated with each instance of the class. For example, in a class `Person`, the attributes could be `name`, `age`, and `gender`.
+
+## Question 3
+**Applying which term to a method allows the method to be called without creating an instance of the class it is in:**
+a. Static
+b. Public
+c. Private
+d. Scope
+
+### Answer
+a. Static
+
+### Explanation
+The term "static" is applied to a method to make it a static method. A static method belongs to the class itself rather than to any instance of the class. As a result, it can be called without creating an instance of the class. Static methods are often used for utility functions that do not depend on the state of an object.
+
+## Question 4
+**Creating multiple methods (or constructors) with the same name but different parameters (number of parameters and/or data type of parameters and/or order of parameters) is called:**
+a. Overriding
+b. Objections
+c. Overloading
+d. Overwriting
+
+### Answer
+c. Overloading
+
+### Explanation
+Method overloading is the practice of creating multiple methods (or constructors) with the same name but different parameters. The parameters can differ in the number of parameters, the data type of parameters, or the order of parameters. Method overloading allows the same method name to be used for different purposes, and the appropriate method is selected at compile time based on the arguments passed to the method.
+
+## Question 5
+**Visibility (public versus private) in a class is important because**
+a. It allows overloading methods.
+b. It confuses students.
+c. It allows creating new objects from a class.
+d. It enforces encapsulation.
+
+### Answer
+d. It enforces encapsulation.
+
+### Explanation
+Visibility (public versus private) in a class is important because it enforces encapsulation. Encapsulation is a fundamental concept in object-oriented programming that involves restricting access to certain components of a class. By marking attributes as private, we prevent direct access to the object's internal state from outside the class. Public methods, including getters and setters, provide controlled access to the object's attributes and allow the object to perform specific actions. Encapsulation helps maintain data integrity and makes the code more robust and maintainable.
+
+
 ## Quizzes
 
 Throughout the module, there will be quizzes to test your knowledge on the topics we have covered. These quizzes will help you assess your understanding and identify areas where you may need to review.
