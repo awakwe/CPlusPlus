@@ -2292,6 +2292,59 @@ Note: The exact range of values for integer data types (`char`, `short`, `int`, 
 
 4. **True**. Arrays must be sorted for a Binary Search to work correctly. Binary Search relies on the fact that the array is sorted to efficiently narrow down the search interval. If the array is not sorted, the Binary Search algorithm may produce incorrect results or fail to find the desired element.
 
+# Multiple Choice Questions and Answers
+
+## Question 1
+**Arrays are homogeneous, which means:**
+a. They can only contain one type of data.
+b. They can contain multiple types of data.
+c. They are static in size.
+d. The index starts at 1.
+
+### Answer
+a. They can only contain one type of data.
+
+### Explanation
+Arrays are homogeneous data structures, which means they can only contain elements of the same data type. For example, an integer array can only contain integers, and a string array can only contain strings. This is one of the fundamental characteristics of arrays in many programming languages.
+
+## Question 2
+**To traverse multidimensional arrays, you most commonly use _____ loops:**
+a. NOT
+b. pointer
+c. infinite
+d. nested
+
+### Answer
+d. nested
+
+### Explanation
+Nested loops are most commonly used to traverse multidimensional arrays. A multidimensional array is essentially an array of arrays, so to access each element, you need one loop for each dimension. For example, to traverse a 2D array, you would use a nested loop: the outer loop iterates over the rows, and the inner loop iterates over the columns.
+
+## Question 3
+**Which of these sorts was NOT covered in the CSE 1321 slides:**
+a. Bubble
+b. Insertion
+c. Selection
+d. Merge
+
+### Answer
+d. Merge
+
+### Explanation
+This question is specific to the content covered in a particular course (CSE 1321) and may not apply universally. As of my knowledge cutoff in September 2021, I don't have access to the specific slides for CSE 1321. However, in general computer science curricula, Bubble, Insertion, and Selection sorts are often covered before Merge sort, as they are simpler and more straightforward, although less efficient.
+
+## Question 4
+**1D & 2D arrays are:**
+a. Used to store multiple types of data
+b. Used to prevent data overflow errors
+c. Used to store multiple values of the same data type
+d. Used to confuse students
+
+### Answer
+c. Used to store multiple values of the same data type
+
+### Explanation
+1D and 2D arrays are used to store multiple values of the same data type. As mentioned earlier, arrays are homogeneous data structures, which means they can only contain elements of the same data type. A 1D array is a linear array with a single row of elements, while a 2D array is an array of arrays, often thought of as a table with rows and columns.
 # Selection Structure Practice Problems
 
 ## True/False Questions
@@ -2445,9 +2498,9 @@ FOR loops are often called counting loops because they are commonly used to iter
 
 
 
-# Multiple Choice Questions and Answers
+## Multiple Choice Questions and Answers
 
-## Question 1
+Question 1
 **An object’s state refers to:**
 a. Its set of methods
 b. Its set of data fields with the current values
