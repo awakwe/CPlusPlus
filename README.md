@@ -2512,6 +2512,14 @@ d. It enforces encapsulation.
 ### Explanation
 Visibility (public versus private) in a class is important because it enforces encapsulation. Encapsulation is a fundamental concept in object-oriented programming that involves restricting access to certain components of a class. By marking attributes as private, we prevent direct access to the object's internal state from outside the class. Public methods, including getters and setters, provide controlled access to the object's attributes and allow the object to perform specific actions. Encapsulation helps maintain data integrity and makes the code more robust and maintainable.
 
+## Note Files 
+
+- [M7_Part1_Methods-notes.txt](https://github.com/awakwe/CPlusPlus/blob/39760a6cc675ef2f2bc5bb814898d1e8bd54dfc8/M7_Part1_Methods-notes.txt)
+- [M7_Strings_Math_notes.txt](https://github.com/awakwe/CPlusPlus/blob/39760a6cc675ef2f2bc5bb814898d1e8bd54dfc8/M7_Strings_Math_notes.txt)
+- [M8_Part1_Intro_to_OOP_notes.txt](https://github.com/awakwe/CPlusPlus/blob/39760a6cc675ef2f2bc5bb814898d1e8bd54dfc8/M8_Part1_Intro_to_OOP_notes.txt)
+- [M8_Part2_OOP_notes.txt](https://github.com/awakwe/CPlusPlus/blob/39760a6cc675ef2f2bc5bb814898d1e8bd54dfc8/M8_Part2_OOP_notes.txt)
+- [Review-Slides-Part-2-notes.txt](https://github.com/awakwe/CPlusPlus/blob/39760a6cc675ef2f2bc5bb814898d1e8bd54dfc8/Review-Slides-Part-2-notes.txt)
+
 
 ## Quizzes
 
