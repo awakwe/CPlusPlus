@@ -1,0 +1,51 @@
+Module 7 Outline: Strings and Math Libraries
+
+I. Introduction
+   A. Importance of strings in data processing
+   B. Built-in string methods
+   C. Differences across languages and versions
+
+II. Common String Methods
+   A. Length of a string
+   B. Equality with another string
+   C. Accessing individual characters
+   D. Concatenation (adding strings)
+   E. Extracting substrings
+   F. Replacing sections of strings
+   G. Trimming leading/trailing whitespace
+   H. Contains a character or another string
+   I. Splitting a string into pieces
+
+III. C/C++ String Libraries
+   A. Differences between C and C++ string libraries
+   B. Using appropriate libraries and methods for string objects and character arrays
+   C. Examples of C/C++ string functions
+
+IV. Language-specific String Method Examples
+   A. Length of a string
+   B. String equality
+   C. Accessing individual characters
+   D. Substring
+   E. Concatenation
+   F. Replacing part of a string
+   G. One string contains another
+   H. Splitting strings using a delimiter
+
+V. C++ String Method Limitations
+   A. Lacking string methods
+   B. Building custom methods
+
+VI. Math Libraries
+   A. Function calls in C++
+   B. Math class usage in Java and C#
+   C. Static methods
+
+VII. Language-specific Math Library Examples
+   A. C++ examples
+   B. Java examples
+   C. C# examples
+
+VIII. Summary
+   A. Libraries for working with strings
+   B. Different functions and behaviors in various languages
+   C. Math library availability in most languages

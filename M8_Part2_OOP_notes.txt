@@ -1,0 +1,43 @@
+Outline of Key Concepts in C++ Notes:
+
+I. Object-Oriented Design and Class Properties
+   A. Default Constructors
+      1. Automatically created if not defined
+      2. Takes no parameters
+      3. Initializes attributes to default values
+   B. Multiple Constructors (Overloading)
+      1. More than one constructor for a class
+      2. Used to customize object initialization
+      3. Vary the number or type of parameters
+   C. Constructor Chaining
+      1. One constructor calls another
+      2. Can be chained multiple times
+   D. Control of Properties
+      1. Getters (Accessors)
+         a. Public methods to access private attributes
+      2. Setters (Modifiers)
+         a. Public methods to modify private attributes
+         b. Can include protections to prevent bad data
+
+II. Visibility of Class Content
+   A. Public: accessible from anywhere outside the class
+   B. Private: only accessible within the class
+   C. General Rules
+      1. Attributes are typically private
+      2. Methods are often public
+
+III. Accessors and Modifiers
+   A. Enable controlled access to private attributes
+   B. Prevent direct manipulation of attributes
+
+IV. Using 'this' and 'self'
+   A. Resolve ambiguity between class attributes and method parameters
+
+V. Constructor Chaining in C++
+   A. Old way: use an initialization method
+   B. New way (C++11 onwards): use the new syntax
+
+VI. Summary
+   A. Classes consist of variables and methods
+   B. Variables should be private; methods should be public or private based on intended use
+   C. Encapsulation is promoted through controlled access to variables

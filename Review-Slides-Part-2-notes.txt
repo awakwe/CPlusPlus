@@ -1,0 +1,62 @@
+CSE 1321 Modules 7 & 8 Review
+
+Module 7 - Methods
+• Facilitates code reusability
+• Can perform calculations or return a value to method call
+• Must provide the required number of parameters and matching parameter data types
+• Method header is the method declaration (usually the top line of the method)
+• Method signature is the combination of the method name and the parameter list.
+                    Optional arguments        Optional return
+                         for Input                value
+
+Module 8 - OOP & Classes
+• Classes are:
+  • A complex data type
+  • A way to represent real-life objects conceptually
+• Classes have:
+  • A name
+  • Variables (attributes) – should be PRIVATE
+  • Constructors (special functions/methods)
+  • Functions (methods)
+    • GET functions return the object’s current attribute value
+    • SET functions change the object’s attribute value
+
+In-Class Exercise
+Create a Fireplace class with firewood and temperature attributes, a method to add firewood (increasing attribute), a method to reduce firewood (as it burns over time), a method that increases the temperature as firewood is added, and one to reduce the temperature as firewood is consumed.
+
+In-Class Exercise Solution
+CLASS FIREPLACE
+  PRIVATE firewood
+  PRIVATE temp
+  CONSTRUCTOR FIREPLACE(parameters: none)
+    firewood = 0
+    temp = 0
+  END CONSTRUCTOR
+  CONSTRUCTOR FIREPLACE(parameters: wood)
+    firewood = wood
+    temp = 300
+  END CONSTRUCTOR
+  METHOD addWood(parameters: wood)
+    this.firewood += wood
+    increaseTemp(100)
+  END METHOD
+  PRIVATE METHOD increaseTemp(parameters: temp)
+    this.temp += temp
+  END METHOD
+  METHOD burnWood(parameters: wood)
+    this.firewood -= wood
+    reduceTemp(50)
+  END METHOD
+  METHOD reduceTemp(parameters: temp)
+    this.temp -= temp
+  END METHOD
+  METHOD getTemp()
+    RETURN this.temp
+  END METHOD
+  METHOD getFirewood()
+    RETURN this.firewood
+  END METHOD
+END CLASS
+
+End of Review
+Questions?

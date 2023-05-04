@@ -1,0 +1,115 @@
+Module 8 – Part 1
+  Object-Oriented Programming and
+             Class Design
+Motivation
+Object-Oriented Programming (OOP) is a powerful programming paradigm that revolves around the concept of classes and objects, enabling the creation of modular, reusable, and maintainable code.
+
+Prepare to embrace a new way of thinking about programming…
+Classes
+By defining classes, we create custom data types!
+A class is a blueprint for creating objects, representing real-world entities like Dogs.
+Classes have:
+• a name
+• attributes (variables)
+• methods (functions, also referred to as "behaviors" or "member functions")
+The Smallest Class
+
+
+CLASS Dog
+BEGIN
+END CLASS
+// Note: This is just the beginning
+The Smallest Class – C# and Java
+
+
+class Dog {
+
+}
+The Smallest Class - C++
+
+
+class Dog {
+
+};
+
+// Note: C++ has different structures
+// This will become our "header" file (later)
+What have we accomplished?
+
+We have:
+• created a new (complex) data type!
+• established the "concept" of a Dog
+
+But, we don't have any actual Dogs yet, just the concept.
+Objects
+
+An object:
+• is a distinct entity in the real world
+• represents a specific dog, employee, student, etc.
+• has a unique identity, state, and behavior
+Object Identity, State, and Behavior
+
+An object has a unique identity, representing a single entity.
+The object state consists of a set of attributes (instance variables or properties) and their current values.
+The object behavior is defined by a set of methods.
+
+Example: Class Student describes individual students, each having a unique ID, their own state (information), and sharing the same behavior (methods).
+Example: Class Bank Account
+A "real life" example
+
+Let's create a Dog class!
+  • Attributes (characteristics)
+    • rabid or not rabid (boolean)
+    • weight (a number)
+    • name (string)
+  • Behaviors
+    • growl
+    • eat
+Step 1: The Skeleton
+
+CLASS Dog
+BEGIN
+  // Attributes go here – name, weight, rabid
+  // Behaviors go here – growl, eat
+END CLASS
+Step 2: Add attributes
+
+CLASS Dog
+BEGIN
+  CREATE rabid = false
+  CREATE weight = 0.0
+  CREATE name = “ ”
+
+  // Behaviors go here
+END CLASS
+Step 3: The Constructor
+
+• A special method
+  • Initializes ALL attributes
+  • Activated when a new instance of the class is created
+• Doesn't have a return type
+• In most languages, the constructor's name MUST be the same as the class name
+Step 3: Designing the Constructor
+
+• Constructors may vary depending on the design
+• Ask questions:
+  • Are all Dogs born with the same rabid state? (yes – all non-rabid)
+  • Are all Dogs born with the same weight? (no – different weights)
+  • Are all Dogs born with the same name? (no – different names)
+• If any answer is "no," then you need information passed in as parameters.
+Step 3: The Constructor
+
+CLASS Dog
+BEGIN
+     CREATE rabid = false
+     CREATE weight = 0.0
+     CREATE name = “ ”
+     // Constructor
+     CONSTRUCTOR Dog (parameters w, n)
+          rabid = false
+          weight = w
+          name = n
+     END CONSTRUCTOR
+     // Behaviors go here
+END CLASS
+Step 4: Relax and Take a break

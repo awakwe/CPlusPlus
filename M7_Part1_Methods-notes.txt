@@ -1,0 +1,107 @@
+Here's a detailed outline of the notes:
+
+I. Module 7 – Part 1: Methods and Data Passing
+   A. Overview
+      1. Terminology
+      2. The Return Type
+      3. The Method’s Name
+      4. Scope of Variables
+      5. Parameters
+      6. Calling Methods
+      7. Runtime Stack
+      8. Overloading
+
+   B. Terminology
+      1. Definition of a function or method
+      2. Benefits of using functions or methods
+      3. Different names for functions or methods
+
+   C. Why have functions?
+      1. Explanation of code redundancy
+      2. Example of redundant code
+      3. Introduction to the concept of creating a function to avoid redundancy
+      4. Example of creating a function to avoid redundancy
+
+   D. Modularizing Code
+      1. Explanation of software design concept using modules
+      2. Benefits of modularizing code
+
+   E. What is a Method?
+      1. Explanation of a method as a black box
+      2. Explanation of method inputs (parameters) and outputs (return values)
+
+   F. Defining Methods
+      1. Explanation of method header and body
+      2. Example of method header and body
+
+   G. Method Signature
+      1. Explanation of method signature
+      2. Example of method signature
+
+   H. The return type
+      1. Explanation of the return type
+      2. Exercise to determine the return type of different methods
+
+   I. The Method’s Name
+      1. Rules for naming methods
+      2. Example of a method name
+
+   J. Scope of Variables
+      1. Explanation of the scope of variables
+      2. Explanation of local variables
+      3. Example of scope of variables
+
+   K. Parameters
+      1. Explanation of parameters
+      2. Explanation of formal parameters and actual parameters
+      3. Explanation of arguments passed by value and by reference
+
+   L. Calling Methods
+      1. Explanation of how to call a method
+      2. Rules for passing parameters to a method
+
+   M. Example of using a method
+      1. Explanation of how to call a method from main
+      2. Explanation of data passing
+      3. Explanation of how a function works
+      4. Example of re-using a function with different parameters
+
+
+I. Re-using the average function with num3 and num1
+   A. Example of calling the average function with different parameters
+   B. Explanation of data passing
+   C. Explanation of how a function works
+
+II. Another Quick Example
+   A. Introduction to void return types
+   B. Example of declaring variables
+   C. Example of initializing variables
+   D. Example of calling a function
+   E. Example of data passing
+   F. Example of function execution
+   G. Example of function completion
+
+III. In-class Problem
+   A. Problem Statement: Find the sum of integers from 1 to 10, from 20 to 30, and from 35 to 45, respectively.
+   B. Psuedocode - A Bad Solution
+   C. Psuedocode - A Good Solution
+   D. Java Example – Method Sum
+   E. C# Example – Method Sum
+   F. C++ Example – Method Sum
+
+IV. Next Problem
+   A. Problem Statement: Write a method that accepts two integers via parameters, determines the largest number, and returns that value.
+   B. Psuedocode - Method Max
+   C. Java Example - Method Max
+
+V. The Runtime Stack
+   A. Explanation of the runtime stack
+   B. Explanation of call stacks
+
+VI. Overloading Methods
+   A. Explanation of method overloading
+   B. Example of method overloading in Java
+
+VII. Final Rules
+   A. Rules for defining methods
+   B. Explanation of method visibility and placement in C++
