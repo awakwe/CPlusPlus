@@ -2506,7 +2506,152 @@ a. Counting
 ### Explanation
 FOR loops are often called counting loops because they are commonly used to iterate a specific number of times based on a counter variable. The counter variable is initialized, incremented (or decremented), and checked against a condition in each iteration of the loop.
 
+# Functions/Methods Practice Problems
 
+## True/False Questions
+
+1. Every program needs a MAIN function or method to run.
+2. Methods can access and modify other methods’ local variables easily.
+3. The bottom of the runtime stack is the currently running method.
+4. The top of the runtime stack is the currently running method.
+5. Methods can be called from non-MAIN methods.
+6. One method can call another method.
+7. Only the main method can call another method.
+
+## Answers and Explanations
+
+1. **True**. In many programming languages, the MAIN function or method is the entry point of the program. When the program is run, execution starts with the MAIN method. If a program does not have a MAIN method, it will not run.
+
+2. **False**. Methods cannot access or modify other methods' local variables. Local variables are only accessible within the method in which they are declared. This is a principle of variable scope in programming.
+
+3. **False**. The bottom of the runtime stack is typically the MAIN method or the first method that was called when the program started. The runtime stack keeps track of the methods that are currently being executed.
+
+4. **True**. The top of the runtime stack is the currently running method. When a method is called, it is pushed onto the top of the stack. When it finishes executing, it is popped from the stack, and control returns to the method that is now at the top of the stack.
+
+5. **True**. Methods can be called from non-MAIN methods. This is a common practice in programming and is often used to break down complex tasks into smaller, more manageable pieces.
+
+6. **True**. One method can call another method. This is known as method invocation or method calling. It's a fundamental concept in structured and object-oriented programming.
+
+7. **False**. Not only the main method can call another method. Any method can call another method as long as the called method is accessible from the calling method (according to the rules of visibility and scope).
+   
+ 
+# Multiple Choice Questions and Answers
+
+## Question 1
+   
+**How many times will this method1() be called with the following code?**
+   
+```java
+for(int i=7;i<10;i++) 
+{
+    method1();
+}
+```
+a. 3
+b. 7
+c. 10
+d. 4
+
+### Answer
+a. 3
+
+### Explanation
+The `for` loop starts with `i` equal to 7 and continues as long as `i` is less than 10, incrementing `i` by 1 each time. So, the loop will execute when `i` is 7, 8, and 9, which is a total of 3 times. Therefore, `method1()` will be called 3 times.
+
+## Question 2
+**Which of the following does not have any effect in method overloading?**
+a. Number of parameters
+b. Return type
+c. Types of parameters
+d. Method name
+
+### Answer
+b. Return type
+
+### Explanation
+Method overloading is determined by the method name and the number and types of parameters. The return type does not affect method overloading. Two methods can have the same name, same return type, but different parameter lists, and they will still be considered overloaded methods.
+
+## Question 3
+**Creating multiple methods with the same name but different parameters (number of parameters and/or data types) is called:**
+a. Overriding
+b. Objections
+c. Overloading
+d. Overwriting
+
+### Answer
+c. Overloading
+
+### Explanation
+Creating multiple methods with the same name but different parameters (number of parameters and/or data types) is called method overloading. Overloading allows methods to perform similar functions but with different types or numbers of parameters.
+
+## Question 4
+**Which of the following is an advantage of creating and using methods in programs?**
+a. Increase complexity of code
+b. Make program maintenance and updates harder
+c. Make code more obscure
+d. Allow reuse of code
+
+### Answer
+d. Allow reuse of code
+
+### Explanation
+Creating and using methods in programs allows for code reuse, which is a fundamental principle of good software design. Methods encapsulate a specific task or function and can be called as many times as needed, reducing redundancy and making the code more organized and easier to understand and maintain.
+
+## Question 5
+**Modularizing code by using functions or methods:**
+a. Reduces redundant code
+b. Increases maintenance time
+c. Eliminates encapsulation
+d. Requires a return statement
+
+### Answer
+a. Reduces redundant code
+
+### Explanation
+Modularizing code by using functions or methods helps to reduce redundant code. By encapsulating specific tasks or functions within methods, you can call these methods whenever needed, instead of writing the same code multiple times. This makes the code more organized, easier to understand, and easier to maintain.
+
+## Question 6
+**A Method’s signature is comprised of:**
+a. Method Name and Return type
+b. Method Name and Parameter List
+c. Return Type and Parameter List
+d. Method Header and Body
+
+### Answer
+b. Method Name and Parameter List
+
+### Explanation
+A method's signature is comprised of the method name and the parameter list (including the number, types, and order of parameters). The return type is not part of the method signature.
+
+## Question 7
+**This means that a copy of a parameter’s value is sent into a method:**
+a. Pass by reference
+b. Pass by value
+c. Passover
+d. Parameter list
+
+### Answer
+b. Pass by value
+
+### Explanation
+Pass by value means that
+
+a copy of the parameter's value is sent into the method. Changes made to the parameter inside the method do not affect the original value outside the method. This is the method of parameter passing used in languages like Java and Python for primitive data types.
+
+## Question 8
+**Methods are used to:**
+a. Allow code reuse
+b. Reduce code complexity and length
+c. Make program maintenance easier.
+d. All these reasons
+
+### Answer
+d. All these reasons
+
+### Explanation
+Methods are used for all these reasons: they allow code reuse, reduce code complexity and length, and make program maintenance easier. By encapsulating specific tasks or functions within methods, you can call these methods whenever needed, instead of writing the same code multiple times. This makes the code more organized, easier to understand, and easier to maintain.   
+   
+   
 # OOP (Classes & Objects) Practice Problems
 
 ## True/False Questions
