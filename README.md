@@ -2367,6 +2367,36 @@ c. Used to store multiple values of the same data type
 
 5. **False**. A DEFAULT CASE is not required as part of a SWITCH statement. The DEFAULT CASE is optional and is used to specify a block of code that will be executed if none of the CASE values match the expression in the SWITCH statement. If a DEFAULT CASE is not provided and no CASE values match, the SWITCH statement will simply do nothing and the program will continue executing the code after the SWITCH statement.
 
+   
+# Multiple Choice Questions and Answers
+
+## Question 1
+**Selection structures use what type of expression to determine if a block of code should run.**
+a. Boolean
+b. Byte
+c. Bitlocker
+d. Bubble
+
+### Answer
+a. Boolean
+
+### Explanation
+Selection structures, such as `if`, `if-else`, and `switch` statements, use Boolean expressions to determine if a block of code should run. A Boolean expression is a logical statement that can be either `true` or `false`. For example, in an `if` statement, the code within the `if` block will run if the Boolean expression evaluates to `true`.
+
+## Question 2
+**What is the name of the CASE that executes if no other cases match for a SWITCH selection structure?**
+a. Default
+b. Else
+c. InCase
+d. None
+
+### Answer
+a. Default
+
+### Explanation
+In a `switch` selection structure, the `default` case is executed if no other cases match. The `default` case is optional and can be used to handle unexpected or default conditions. If no `default` case is provided and no other cases match, the `switch` statement will simply do nothing and the program will continue executing the code after the `switch` statement.
+   
+   
 # Repetition Structure Practice Problems
 
 ## True/False Questions
